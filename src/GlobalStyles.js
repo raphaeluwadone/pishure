@@ -1,6 +1,12 @@
 import {createGlobalStyle} from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+  :root{
+    --text: 'Heebo', sans-serif;
+    --black: #060813;
+  }
+
+
   *, *::before, *::after{
     box-sizing: border-box;
     margin: 0;
@@ -9,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html, body{
-    --text: 'Heebo', sans-serif;
+    background: var(--black);
     font-family: var(--text);
     padding: 0 1rem;
   }

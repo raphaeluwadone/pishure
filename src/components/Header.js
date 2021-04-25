@@ -1,12 +1,28 @@
 import React from 'react'
+import logo from './logo.svg';
+import styled from 'styled-components';
 
-const Header = () => {
+const Header = ({children}) => {
   return (
-    <Header>
-      <Logo />
-      
-    </Header>
+      <Header>
+        <Logo src={logo}/>
+        <HeaderItem>
+          {children}
+        </HeaderItem>
+      </Header>
   )
 }
 
-export default Header
+
+const Header = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6.25rem;
+`
+
+const HeaderItem = styled.div``
+
+const Logo = styled.img``
+
+export default Header;
