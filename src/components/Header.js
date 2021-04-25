@@ -1,20 +1,25 @@
 import React from 'react'
-import logo from './logo.svg';
+import logo from '../logo.svg';
 import styled from 'styled-components';
 
 const Header = ({children}) => {
   return (
-      <Header>
+    <Wrapper>
+      <Nav>
         <Logo src={logo}/>
         <HeaderItem>
           {children}
         </HeaderItem>
-      </Header>
+      </Nav>
+    </Wrapper>
   )
 }
 
+const Wrapper = styled.header`
+  font-size: 0.875rem;
+`;
 
-const Header = styled.nav`
+const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;

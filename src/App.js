@@ -1,20 +1,22 @@
-
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {GlobalStyles} from './GlobalStyles';
+import styled from 'styled-components/macro';
+
+import Login from './components/Login'
+import Signup from './components/Signup'
 
 function App() {
   return (
     <Wrapper>
       <Router>
-        <p>Welcome to Pishure App</p>
         <GlobalStyles />
         <Switch>
           <Route path="/signup">
             <Signup />
           </Route>
 
-          <Route path="signin">
-            <Signin />
+          <Route path="/login">
+            <Login />
           </Route>
         </Switch>
       </Router>

@@ -10,7 +10,7 @@ const Signup = () => {
     <>
       <Header>
         Already have an account
-        <Login>Login</Login>
+        <Login to="/login">Login</Login>
       </Header>
       <Wrapper>
         <ImagePreviewWrap>
@@ -45,15 +45,30 @@ const Signup = () => {
             </FormRow>
             <Submit>Sign Up</Submit>
           </Form>
-          <FormText>By signing up, you agree to our <A>Terms of Service</A> and Privacy Policy.</FormText>
+          <FormText>By signing up, you agree to our <A>Terms of Service</A> and <A>Privacy Policy</A>.</FormText>
         </FormWrapper>
       </Wrapper>
     </>
   )
 }
 
+const Login = styled(Link)`
+  padding: 0.7rem 1.5rem;
+  margin-left: 2rem;
+  color: var(--white);
+  background: #12141D;
+  text-decoration: none;
+  
+  border: 1px solid #3D416C;
+  border-radius: var(--radius)
+`;
+
+const A = styled.a``;
+
 const Wrapper = styled.div`
   display: flex;
+  margin-top: 4rem;
+  padding-bottom: 2rem;
 `
 
 const ImagePreviewWrap = styled.div``

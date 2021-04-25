@@ -3,7 +3,9 @@ import {createGlobalStyle} from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
   :root{
     --text: 'Heebo', sans-serif;
-    --black: #060813;
+    --black-900: #060813;
+    --white: #fff;
+    --radius: 0.3125rem;
   }
 
 
@@ -15,9 +17,10 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html, body{
-    background: var(--black);
+    background: var(--black-900);
     font-family: var(--text);
     padding: 0 1rem;
+    color: var(--white)
   }
 
   img{
