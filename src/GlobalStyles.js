@@ -6,6 +6,8 @@ export const GlobalStyles = createGlobalStyle`
     --black-900: #060813;
     --white: #fff;
     --radius: 0.3125rem;
+    --blue: #1DA1F2;
+    --red: #E21F3B;
   }
 
 
@@ -20,7 +22,7 @@ export const GlobalStyles = createGlobalStyle`
     background: var(--black-900);
     font-family: var(--text);
     padding: 0 1rem;
-    color: var(--white)
+    color: var(--white);
   }
 
   img{
@@ -33,6 +35,11 @@ export const GlobalStyles = createGlobalStyle`
     border: none;
     outline: none;
     box-shadow: none;
+  }
+
+  button{
+    cursor: pointer;
+
   }
   
 `
