@@ -153,6 +153,7 @@ const OrInner = styled.span`
   padding: 0 1rem;
   background-color: var(--black-900);
   z-index: 1;
+  color: #9395AD;
 `;
 
 const Form = styled.form``;

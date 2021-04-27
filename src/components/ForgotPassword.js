@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 import twitter from '../icon-twitter.svg';
 import fb from '../icon-fb.svg'
 
-const Signin = () => {
+const ForgotPassword = () => {
   return (
     <>
       <Header>
@@ -21,29 +21,15 @@ const Signin = () => {
         
 
         <FormWrapper>
-          <Headline>Login to Pishure.</Headline>
+          <Headline>Forgot password.</Headline>
           <BodyText>
-            Tell the true Nigerian stories through the lenses of creators all over Nigeria.
+            Enter your email associated with this account and we’ll send you a reset password link.
           </BodyText>
-          <WrapperItem>
-            <TwitterButton>
-              <TwitterIcon src={twitter} />Sign up with Twitter
-            </TwitterButton>
-            <FbButton as='button'><FbIcon src={fb}/></FbButton>
-          </WrapperItem>
-          <Or>
-            <OrInner>OR</OrInner>
-          </Or>
           <Form>
-            <FormRow>
+            <FormRow className="mg-b">
               <Input as='input' placeholder="Email address"/>
             </FormRow>
-
-            <FormRow>
-              <Input as='input' placeholder="Password"/>
-            </FormRow>
-            <FormLink>Forgot password?</FormLink>
-            <Submit type="submit">Login</Submit>
+            <Submit type="submit">Submit</Submit>
           </Form>
         </FormWrapper>
       </Wrapper>
@@ -59,11 +45,6 @@ const Login = styled(Link)`
   text-decoration: none;
   border: 1px solid #3D416C;
   border-radius: var(--radius)
-`;
-
-const A = styled.a`
-  text-decoration: underline;
-  cursor: pointer;
 `;
 
 const Wrapper = styled.div`
@@ -87,70 +68,16 @@ const Headline = styled.h1`
 `
 
 const BodyText = styled.p`
-  margin-bottom: 2.5rem;
+  margin-bottom: 5rem;
   font-size: 1.125rem;
   line-height: 1.5;
   color: #E9EAEF;
 `
 
-const WrapperItem = styled.div`
-  display: flex;
-  margin-bottom: 4.1875rem;
-`;
-
-const TwitterButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 0;
-  flex: calc(75% - 1.3rem);
-  margin-right: 1.3rem;
-  border-radius: var(--radius);
-  background: var(--blue);
-  font-size: 1rem;
-  color: var(--white);
-`
-
 const TwitterIcon = styled.img`
   margin-right: 1.5rem;
 `
-
-const FbButton = styled(Login)`
-  flex: 25%;
-  display: grid;
-  place-items: center;
-  margin: 0;
-`
-
-const FbIcon = styled.img`
-  margin-right: 0;
-`
-
-const Or = styled.div`
-  position: relative;
-  text-align: center;
-  margin-bottom: 3.5rem;
-
-    &::after{
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 1px;
-      background: #9395AD;
-      left: 0;
-      top: calc(50% - 0.5px);
-    }
-`;
-
-const OrInner = styled.span`
-  display: inline-block;
-  position: relative;
-  padding: 0 1rem;
-  background-color: var(--black-900);
-  z-index: 1;
-  color: #9395AD;
-`;
-
+ 
 const Form = styled.form``;
 
 const FormRow = styled.div`
@@ -177,17 +104,9 @@ const Input = styled(Login)`
   }
 `
 
-const FormLink = styled(Link)`
-  display: block;
-  margin-bottom: 2.5rem;
-  color: var(--white);
-  text-decoration-color: #9395AD;
-`
-
 const Submit = styled.button`
   width: 100%;
   padding: 1rem;
-  
   border-radius: var(--radius);
   background: var(--red);
   color: var(--white);
@@ -196,4 +115,4 @@ const Submit = styled.button`
 
 
 
-export default Signin
+export default ForgotPassword

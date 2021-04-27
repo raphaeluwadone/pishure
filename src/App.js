@@ -4,6 +4,7 @@ import styled from 'styled-components/macro';
 
 import Login from './components/Login'
 import Signup from './components/Signup'
+import ForgotPassword from './components/ForgotPassword';
 
 function App() {
   return (
@@ -18,6 +19,19 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
+
+          <Route path="/forgotpassword">
+            <ForgotPassword />
+          </Route>
+
+          <Route path="/setpassword">
+            <SetPassword />
+          </Route>
+
+          <Route path="/mailsent">
+            <MailSent />
+          </Route>
+
         </Switch>
       </Router>
     </Wrapper>
