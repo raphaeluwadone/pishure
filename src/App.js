@@ -2,9 +2,11 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {GlobalStyles} from './GlobalStyles';
 import styled from 'styled-components/macro';
 
-import Login from './components/Login'
-import Signup from './components/Signup'
-import ForgotPassword from './components/ForgotPassword';
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+import ForgotPassword from './pages/ForgotPassword';
+import SetPassword from './pages/SetPassword';
+import MailSent from './pages/MailSent';
 
 function App() {
   return (

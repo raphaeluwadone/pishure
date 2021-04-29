@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from './Header';
-import ImagePreview from './ImagePreview'
+import Header from '../components/Header';
+import ImagePreview from '../components/ImagePreview'
 import {Link} from 'react-router-dom'
 
-import twitter from '../icon-twitter.svg';
-import fb from '../icon-fb.svg'
+import twitter from '../assets/icon-twitter.svg';
+import fb from '../assets/icon-fb.svg';
 
-const Signin = () => {
+const Signup = () => {
   return (
     <>
       <Header>
-        New to Pishure?
-        <Login to="/signup">Sign up</Login>
+        Already have an account
+        <Login to="/login">Login</Login>
       </Header>
       <Wrapper>
         <ImagePreviewWrap>
@@ -21,9 +21,9 @@ const Signin = () => {
         
 
         <FormWrapper>
-          <Headline>Login to Pishure.</Headline>
+          <Headline>Sign up to Pishure.</Headline>
           <BodyText>
-            Tell the true Nigerian stories through the lenses of creators all over Nigeria.
+            Millions of free beautiful Nigerian photos for every creative.
           </BodyText>
           <WrapperItem>
             <TwitterButton>
@@ -35,16 +35,21 @@ const Signin = () => {
             <OrInner>OR</OrInner>
           </Or>
           <Form>
+            <FormRow grid>
+              <Input as='input' placeholder="First name" mgR/>
+              <Input as='input' placeholder="Last name"/>
+            </FormRow>
+
             <FormRow>
               <Input as='input' placeholder="Email address"/>
             </FormRow>
 
-            <FormRow>
+            <FormRow className="mg-b">
               <Input as='input' placeholder="Password"/>
             </FormRow>
-            <FormLink>Forgot password?</FormLink>
-            <Submit type="submit">Login</Submit>
+            <Submit type="submit">Sign Up</Submit>
           </Form>
+          <FormText>By signing up, you agree to our <A>Terms of Service</A> and <A>Privacy Policy</A>.</FormText>
         </FormWrapper>
       </Wrapper>
     </>
@@ -177,23 +182,20 @@ const Input = styled(Login)`
   }
 `
 
-const FormLink = styled(Link)`
-  display: block;
-  margin-bottom: 2.5rem;
-  color: var(--white);
-  text-decoration-color: #9395AD;
-`
-
 const Submit = styled.button`
   width: 100%;
   padding: 1rem;
-  
+  margin-bottom: 1.5rem;
   border-radius: var(--radius);
   background: var(--red);
   color: var(--white);
   font-size: 1rem;
 `
 
+const FormText = styled.p`
+  font-size: 0.875rem;
+  color: #BEC0CE;
+  text-align: center;
+`;
 
-
-export default Signin
+export default Signup

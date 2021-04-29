@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from './Header';
-import ImagePreview from './ImagePreview'
+import Header from '../components/Header';
+import ImagePreview from '../components/ImagePreview'
 import {Link} from 'react-router-dom'
 
-import twitter from '../icon-twitter.svg';
-import fb from '../icon-fb.svg'
 
-const ForgotPassword = () => {
+const SetPassword = () => {
   return (
     <>
       <Header>
@@ -21,15 +19,16 @@ const ForgotPassword = () => {
         
 
         <FormWrapper>
-          <Headline>Forgot password.</Headline>
+          <Headline>Set password.</Headline>
           <BodyText>
-            Enter your email associated with this account and we’ll send you a reset password link.
+            Create a new password. Make sure it is something you can easily remember.
           </BodyText>
+          
           <Form>
-            <FormRow className="mg-b">
-              <Input as='input' placeholder="Email address"/>
+            <FormRow>
+              <Input as='input' placeholder="Password"/>
             </FormRow>
-            <Submit type="submit">Submit</Submit>
+            <Submit type="submit">Set password</Submit>
           </Form>
         </FormWrapper>
       </Wrapper>
@@ -74,10 +73,8 @@ const BodyText = styled.p`
   color: #E9EAEF;
 `
 
-const TwitterIcon = styled.img`
-  margin-right: 1.5rem;
-`
- 
+
+
 const Form = styled.form``;
 
 const FormRow = styled.div`
@@ -107,12 +104,11 @@ const Input = styled(Login)`
 const Submit = styled.button`
   width: 100%;
   padding: 1rem;
+  
   border-radius: var(--radius);
   background: var(--red);
   color: var(--white);
   font-size: 1rem;
 `
 
-
-
-export default ForgotPassword
+export default SetPassword;

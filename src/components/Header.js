@@ -1,8 +1,8 @@
 import React from 'react'
-import logo from '../logo.svg';
+import logo from '../assets/logo.svg';
 import styled from 'styled-components';
 
-const Header = ({children}) => {
+const Header = ({children, justifyContent}) => {
   return (
     <Wrapper>
       <Nav>
@@ -21,7 +21,7 @@ const Wrapper = styled.header`
 
 const Nav = styled.nav`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({justifyContent}) => justifyContent ? justifyContent : 'space-between'};
   align-items: center;
   height: 6.25rem;
 `
