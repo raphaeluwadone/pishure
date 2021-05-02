@@ -7,9 +7,7 @@ const Header = ({children, justifyContent}) => {
     <Wrapper>
       <Nav>
         <Logo src={logo}/>
-        <HeaderItem>
-          {children}
-        </HeaderItem>
+        {children}
       </Nav>
     </Wrapper>
   )
@@ -21,12 +19,11 @@ const Wrapper = styled.header`
 
 const Nav = styled.nav`
   display: flex;
-  justify-content: ${({justifyContent}) => justifyContent ? justifyContent : 'space-between'};
+  justify-content: space-between;
   align-items: center;
   height: 6.25rem;
 `
 
-const HeaderItem = styled.div``
 
 const Logo = styled.img``
 

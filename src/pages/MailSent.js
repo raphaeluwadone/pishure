@@ -10,8 +10,10 @@ const MailSent = () => {
   return (
     <div>
       <Header>
-        New to Pishure?
-        <Login to="/signup">Sign up</Login>
+        <WrapperInner>
+          New to Pishure?
+          <Login to="/signup">Sign up</Login>
+        </WrapperInner>
       </Header>
       <Wrapper>
         <ImagePreviewWrap>
@@ -29,6 +31,8 @@ const MailSent = () => {
     </div>
   )
 }
+
+const WrapperInner = styled.div``
 
 const Wrapper = styled.div`
   display: flex;

@@ -11,8 +11,10 @@ const Signup = () => {
   return (
     <>
       <Header>
-        Already have an account
-        <Login to="/login">Login</Login>
+        <WrapperInner>
+          Already have an account
+          <Login to="/login">Login</Login>
+        </WrapperInner>
       </Header>
       <Wrapper>
         <ImagePreviewWrap>
@@ -65,6 +67,8 @@ const Login = styled(Link)`
   border: 1px solid #3D416C;
   border-radius: var(--radius)
 `;
+
+const WrapperInner = styled.div``
 
 const A = styled.a`
   text-decoration: underline;

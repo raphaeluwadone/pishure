@@ -8,8 +8,10 @@ const ForgotPassword = () => {
   return (
     <>
       <Header>
-        New to Pishure?
-        <Login to="/signup">Sign up</Login>
+        <WrapperInner>
+          New to Pishure?
+          <Login to="/signup">Sign up</Login>
+        </WrapperInner>
       </Header>
       <Wrapper>
         <ImagePreviewWrap>
@@ -43,6 +45,8 @@ const Login = styled(Link)`
   border: 1px solid #3D416C;
   border-radius: var(--radius)
 `;
+
+const WrapperInner = styled.div``
 
 const Wrapper = styled.div`
   display: flex;
