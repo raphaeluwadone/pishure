@@ -1,19 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from '../components/Header';
-import ImagePreview from '../components/ImagePreview'
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+
+import {Wrapper} from '../../components/Wrapper';
+import Header from '../../components/Header';
+import ImagePreview from '../../components/ImagePreview'
+
 
 const ForgotPassword = () => {
   return (
-    <>
+    <Wrapper>
       <Header>
         <WrapperInner>
           New to Pishure?
           <Login to="/signup">Sign up</Login>
         </WrapperInner>
       </Header>
-      <Wrapper>
+      <Container>
         <ImagePreviewWrap>
           <ImagePreview />
         </ImagePreviewWrap>
@@ -31,8 +34,8 @@ const ForgotPassword = () => {
             <Submit type="submit">Submit</Submit>
           </Form>
         </FormWrapper>
-      </Wrapper>
-    </>
+      </Container>
+    </Wrapper>
   )
 }
 
@@ -48,7 +51,7 @@ const Login = styled(Link)`
 
 const WrapperInner = styled.div``
 
-const Wrapper = styled.div`
+const Container = styled.div`
   display: flex;
   max-width: 75.9375rem;
   justify-content: space-between;
@@ -73,10 +76,6 @@ const BodyText = styled.p`
   font-size: 1.125rem;
   line-height: 1.5;
   color: #E9EAEF;
-`
-
-const TwitterIcon = styled.img`
-  margin-right: 1.5rem;
 `
  
 const Form = styled.form``;
@@ -109,7 +108,7 @@ const Submit = styled.button`
   width: 100%;
   padding: 1rem;
   border-radius: var(--radius);
-  background: var(--red);
+  background: var(--pishure-red);
   color: var(--white);
   font-size: 1rem;
 `

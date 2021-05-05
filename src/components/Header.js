@@ -1,27 +1,26 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 import logo from '../assets/logo.svg';
 import styled from 'styled-components';
 
-const Header = ({children, justifyContent}) => {
+const Header = ({children}) => {
   return (
-    <Wrapper>
       <Nav>
-        <Logo src={logo}/>
+        <Link to="/">
+          <Logo src={logo}/>
+        </Link>
+        
         {children}
       </Nav>
-    </Wrapper>
   )
 }
-
-const Wrapper = styled.header`
-  font-size: 0.875rem;
-`;
 
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 6.25rem;
+  font-size: 0.875rem;
 `
 
 

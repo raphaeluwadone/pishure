@@ -4,10 +4,14 @@ export const GlobalStyles = createGlobalStyle`
   :root{
     --text: 'Heebo', sans-serif;
     --black-900: #060813;
+    --black-700: #12141D;
     --white: #fff;
     --radius: 0.3125rem;
-    --blue: #1DA1F2;
-    --red: #E21F3B;
+    --grey-90%: ;
+    --twitter-blue: #1DA1F2;
+    --pishure-red: #E21F3B;
+    --pishure-light-red: #F3A4AF;
+    --border-color: #3D416C;
   }
 
 
@@ -21,7 +25,6 @@ export const GlobalStyles = createGlobalStyle`
   html, body{
     background: var(--black-900);
     font-family: var(--text);
-    padding: 0 1rem;
     color: var(--white);
   }
 
@@ -39,7 +42,10 @@ export const GlobalStyles = createGlobalStyle`
 
   button{
     cursor: pointer;
+  }
 
+  a{
+    text-decoration: none;
   }
   
 `

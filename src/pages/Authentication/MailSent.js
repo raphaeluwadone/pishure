@@ -1,21 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from '../components/Header';
-import ImagePreview from '../components/ImagePreview';
+
+import {Wrapper} from '../../components/Wrapper';
+import Header from '../../components/Header';
+import ImagePreview from '../../components/ImagePreview';
 import {Link} from 'react-router-dom';
 
-import mailIcon from '../assets/icon-mail.svg'
+import mailIcon from '../../assets/icon-mail.svg'
 
 const MailSent = () => {
   return (
-    <div>
+    <Wrapper>
       <Header>
         <WrapperInner>
           New to Pishure?
           <Login to="/signup">Sign up</Login>
         </WrapperInner>
       </Header>
-      <Wrapper>
+      <Container>
         <ImagePreviewWrap>
           <ImagePreview />
         </ImagePreviewWrap>
@@ -27,14 +29,14 @@ const MailSent = () => {
             Please check your email and click on the link to reset your password.
           </BodyText>
         </Content>
-      </Wrapper>
-    </div>
+      </Container>
+    </Wrapper>
   )
 }
 
 const WrapperInner = styled.div``
 
-const Wrapper = styled.div`
+const Container = styled.div`
   display: flex;
   max-width: 75.75rem;
   justify-content: space-between;

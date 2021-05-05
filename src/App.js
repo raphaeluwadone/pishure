@@ -1,49 +1,47 @@
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {GlobalStyles} from './GlobalStyles';
-import styled from 'styled-components/macro';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { GlobalStyles } from "./GlobalStyles";
 
-import Login from './pages/Login'
-import Signup from './pages/Signup'
-import ForgotPassword from './pages/ForgotPassword';
-import SetPassword from './pages/SetPassword';
-import MailSent from './pages/MailSent';
+import {
+	Login,
+	Signup,
+	ForgotPassword,
+	SetPassword,
+	MailSent,
+} from "./pages/Authentication";
+
+import Upload from "./pages/Upload";
 
 function App() {
-  return (
-    <Wrapper>
-      <Router>
-        <GlobalStyles />
-        <Switch>
-          <Route path="/signup">
-            <Signup />
-          </Route>
+	return (
+		<Router>
+			<GlobalStyles />
+			<Switch>
+				<Route path="/signup">
+					<Signup />
+				</Route>
 
-          <Route path="/login">
-            <Login />
-          </Route>
+				<Route path="/login">
+					<Login />
+				</Route>
 
-          <Route path="/forgotpassword">
-            <ForgotPassword />
-          </Route>
+				<Route path="/forgotpassword">
+					<ForgotPassword />
+				</Route>
 
-          <Route path="/setpassword">
-            <SetPassword />
-          </Route>
+				<Route path="/setpassword">
+					<SetPassword />
+				</Route>
 
-          <Route path="/mailsent">
-            <MailSent />
-          </Route>
+				<Route path="/mailsent">
+					<MailSent />
+				</Route>
 
-        </Switch>
-      </Router>
-    </Wrapper>
-    
-  );
+				<Route path="/upload">
+					<Upload />
+				</Route>
+			</Switch>
+		</Router>
+	);
 }
-
-const Wrapper = styled.div`
-   max-width: 83rem;
-   margin: 0 auto;
-`
 
 export default App;

@@ -1,31 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from '../components/Header';
-import ImagePreview from '../components/ImagePreview'
-import {Link} from 'react-router-dom'
 
-import twitter from '../assets/icon-twitter.svg';
-import fb from '../assets/icon-fb.svg';
+import Header from '../../components/Header';
+import ImagePreview from '../../components/ImagePreview'
+import {Link} from 'react-router-dom';
+import {Wrapper} from '../../components/Wrapper';
+import {Container} from './AuthStyles';
 
-const Signup = () => {
+
+import twitter from '../../assets/icon-twitter.svg';
+import fb from '../../assets/icon-fb.svg'
+
+const Signin = () => {
   return (
-    <>
+    <Wrapper>
       <Header>
         <WrapperInner>
-          Already have an account
-          <Login to="/login">Login</Login>
+          New to Pishure?
+          <Login to="/signup">Sign up</Login>
         </WrapperInner>
       </Header>
-      <Wrapper>
+      <Container>
         <ImagePreviewWrap>
           <ImagePreview />
         </ImagePreviewWrap>
         
 
         <FormWrapper>
-          <Headline>Sign up to Pishure.</Headline>
+          <Headline>Login to Pishure.</Headline>
           <BodyText>
-            Millions of free beautiful Nigerian photos for every creative.
+            Tell the true Nigerian stories through the lenses of creators all over Nigeria.
           </BodyText>
           <WrapperItem>
             <TwitterButton>
@@ -37,24 +41,19 @@ const Signup = () => {
             <OrInner>OR</OrInner>
           </Or>
           <Form>
-            <FormRow grid>
-              <Input as='input' placeholder="First name" mgR/>
-              <Input as='input' placeholder="Last name"/>
-            </FormRow>
-
             <FormRow>
               <Input as='input' placeholder="Email address"/>
             </FormRow>
 
-            <FormRow className="mg-b">
+            <FormRow>
               <Input as='input' placeholder="Password"/>
             </FormRow>
-            <Submit type="submit">Sign Up</Submit>
+            <FormLink>Forgot password?</FormLink>
+            <Submit type="submit">Login</Submit>
           </Form>
-          <FormText>By signing up, you agree to our <A>Terms of Service</A> and <A>Privacy Policy</A>.</FormText>
         </FormWrapper>
-      </Wrapper>
-    </>
+      </Container>
+    </Wrapper>
   )
 }
 
@@ -69,19 +68,6 @@ const Login = styled(Link)`
 `;
 
 const WrapperInner = styled.div``
-
-const A = styled.a`
-  text-decoration: underline;
-  cursor: pointer;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  max-width: 75.9375rem;
-  justify-content: space-between;
-  margin-top: 4rem;
-  padding-bottom: 2rem;
-`
 
 const ImagePreviewWrap = styled.div``
 
@@ -115,7 +101,7 @@ const TwitterButton = styled.button`
   flex: calc(75% - 1.3rem);
   margin-right: 1.3rem;
   border-radius: var(--radius);
-  background: var(--blue);
+  background: var(--twitter-blue);
   font-size: 1rem;
   color: var(--white);
 `
@@ -186,20 +172,22 @@ const Input = styled(Login)`
   }
 `
 
+const FormLink = styled(Link)`
+  display: block;
+  margin-bottom: 2.5rem;
+  color: var(--white);
+  text-decoration-color: #9395AD;
+`
+
 const Submit = styled.button`
   width: 100%;
   padding: 1rem;
-  margin-bottom: 1.5rem;
   border-radius: var(--radius);
-  background: var(--red);
+  background: var(--pishure-red);
   color: var(--white);
   font-size: 1rem;
 `
 
-const FormText = styled.p`
-  font-size: 0.875rem;
-  color: #BEC0CE;
-  text-align: center;
-`;
 
-export default Signup
+
+export default Signin
