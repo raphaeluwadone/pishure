@@ -4,6 +4,7 @@ import Header from '../../components/Header';
 import ImagePreview from '../../components/ImagePreview';
 import {Wrapper} from '../../components/Wrapper';
 import {Link} from 'react-router-dom';
+import FormGroup from '../../components/FormGroup';
 
 import twitter from '../../assets/icon-twitter.svg';
 import fb from '../../assets/icon-fb.svg';
@@ -39,16 +40,16 @@ const Signup = () => {
           </Or>
           <Form>
             <FormRow grid>
-              <Input as='input' placeholder="First name" mgR/>
-              <Input as='input' placeholder="Last name"/>
+              <FormGroup label="First name" mgR/>
+              <FormGroup label="Last name"/>
             </FormRow>
 
             <FormRow>
-              <Input as='input' placeholder="Email address"/>
+              <FormGroup type="email" label="Email address"/>
             </FormRow>
 
             <FormRow className="mg-b">
-              <Input as='input' placeholder="Password"/>
+              <FormGroup type="password" label="Password"/>
             </FormRow>
             <Submit type="submit">Sign Up</Submit>
           </Form>
@@ -169,21 +170,6 @@ const FormRow = styled.div`
 
   &.mg-b{
     margin-bottom: 2.5rem;
-  }
-`
-
-const Input = styled(Login)`
-  width: 100%;
-  margin-left: 0;
-  padding: 1rem;
-  font-size: 1rem;
-
-  ${(props) => props.mgR && `
-    margin-right: 1.5rem;
-  `}
-
-  &::placeholder{
-    color: #BEC0CE;
   }
 `
 

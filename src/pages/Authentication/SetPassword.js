@@ -5,6 +5,7 @@ import {Wrapper} from '../../components/Wrapper';
 import Header from '../../components/Header';
 import ImagePreview from '../../components/ImagePreview'
 import {Link} from 'react-router-dom';
+import FormGroup from '../../components/FormGroup';
 
 
 const SetPassword = () => {
@@ -30,7 +31,7 @@ const SetPassword = () => {
           
           <Form>
             <FormRow>
-              <Input as='input' placeholder="Password"/>
+              <FormGroup type="password" label="Password"/>
             </FormRow>
             <Submit type="submit">Set password</Submit>
           </Form>

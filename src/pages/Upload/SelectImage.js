@@ -1,29 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import {Link} from 'react-router-dom';
-
-import Header from '../components/Header';
-import {Wrapper} from '../components/Wrapper';
-import BottomNav from '../components/BottomNav'
-
-const Upload = () => {
+const SelectImage = () => {
   return (
-    <>
-      <Wrapper>
-        <Header>
-          <Title>Submit Photos</Title>
-          <StyledLink>Need help?</StyledLink>
-        </Header>
-      </Wrapper>
-      
-      <UploadContainer>
-        <DragTarget>
+    <SelectImageContainer>
+        <DropTarget>
           <UploadButton>
             Drag and drop images <Block>or <Highlight>browse</Highlight> to choose a file</Block>
             <Small>(Images should be at most 4MB in size each.)</Small>
           </UploadButton>
-        </DragTarget>
-        <UploadDetails>
+        </DropTarget>
+        <Details>
           <Col>
             <DetailsText>
               <Dot>*</Dot>
@@ -40,36 +24,17 @@ const Upload = () => {
               <Span>Your uploads will be distributed for free under the <A>Pishure license.</A></Span>
             </DetailsText>
           </Col>
-        </UploadDetails>
-      </UploadContainer>
-
-      <BottomNav />
-    </>
+        </Details>
+      </SelectImageContainer>
   )
 }
 
-const Title = styled.h1`
-  font-weight: 500;
-  font-size: 1.25rem;
-  
-`
-
-const StyledLink = styled(Link)`
-  color: var(--white);
-  text-decoration: underline;
-`
-
-const A = styled.a`
-  color: var(--white);
-  text-decoration: underline;
-`
-
-const UploadContainer = styled.div`
+const SelectImageContainer = styled.div`
   max-width: 43.75rem;
   margin: 6.25rem auto 11.625rem;
 `
 
-const DragTarget = styled.div`
+const DropTarget = styled.div`
   height: 25rem;
   border: 1px dashed var(--border-color);
   display: grid;
@@ -106,7 +71,7 @@ const Small = styled.span`
   color: #BEC0CE;
 `
 
-const UploadDetails = styled.div`
+const Details = styled.div`
   display: flex;
   justify-content: space-between;
 `
@@ -134,4 +99,4 @@ const Dot = styled.span`
   line-height: 1.47;
 `
 
-export default Upload
+export default SelectImage;

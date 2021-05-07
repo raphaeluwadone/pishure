@@ -4,8 +4,8 @@ import {Link} from 'react-router-dom';
 
 import {Wrapper} from '../../components/Wrapper';
 import Header from '../../components/Header';
-import ImagePreview from '../../components/ImagePreview'
-
+import ImagePreview from '../../components/ImagePreview';
+import FormGroup from '../../components/FormGroup';
 
 const ForgotPassword = () => {
   return (
@@ -29,7 +29,7 @@ const ForgotPassword = () => {
           </BodyText>
           <Form>
             <FormRow className="mg-b">
-              <Input as='input' placeholder="Email address"/>
+              <FormGroup type="email" label={"Email address"} />
             </FormRow>
             <Submit type="submit">Submit</Submit>
           </Form>
@@ -86,21 +86,6 @@ const FormRow = styled.div`
 
   &.mg-b{
     margin-bottom: 2.5rem;
-  }
-`
-
-const Input = styled(Login)`
-  width: 100%;
-  margin-left: 0;
-  padding: 1rem;
-  font-size: 1rem;
-
-  ${(props) => props.mgR && `
-    margin-right: 1.5rem;
-  `}
-
-  &::placeholder{
-    color: #BEC0CE;
   }
 `
 

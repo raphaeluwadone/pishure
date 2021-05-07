@@ -6,6 +6,7 @@ import ImagePreview from '../../components/ImagePreview'
 import {Link} from 'react-router-dom';
 import {Wrapper} from '../../components/Wrapper';
 import {Container} from './AuthStyles';
+import FormGroup from '../../components/FormGroup';
 
 
 import twitter from '../../assets/icon-twitter.svg';
@@ -42,11 +43,11 @@ const Signin = () => {
           </Or>
           <Form>
             <FormRow>
-              <Input as='input' placeholder="Email address"/>
+              <FormGroup type="email" label="Email address"/>
             </FormRow>
 
             <FormRow>
-              <Input as='input' placeholder="Password"/>
+              <FormGroup type="password" label="Password"/>
             </FormRow>
             <FormLink>Forgot password?</FormLink>
             <Submit type="submit">Login</Submit>
@@ -157,20 +158,6 @@ const FormRow = styled.div`
   }
 `
 
-const Input = styled(Login)`
-  width: 100%;
-  margin-left: 0;
-  padding: 1rem;
-  font-size: 1rem;
-
-  ${(props) => props.mgR && `
-    margin-right: 1.5rem;
-  `}
-
-  &::placeholder{
-    color: #BEC0CE;
-  }
-`
 
 const FormLink = styled(Link)`
   display: block;
