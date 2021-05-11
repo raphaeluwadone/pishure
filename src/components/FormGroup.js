@@ -12,13 +12,13 @@ const FormGroup = ({type='text', label, register, mgR, children}) => {
 
 const InputBox = styled.div`
   padding: 0 1rem;
+  width: 100%;
   height: 3.5rem;
   display: flex;
   align-items: center;
-  color: var(--white);
   background: #12141D;
   border: 1px solid #3D416C;
-  border-radius: var(--radius)
+  border-radius: var(--radius);
 
   ${(props) => props.mgR && `
     margin-right: 1.5rem;
@@ -31,6 +31,7 @@ const InputField = styled.input`
   border: none;
   font-size: 1rem;
   width: 100%;
+  color: #BEC0CE;
   
   
   &::placeholder{

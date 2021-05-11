@@ -5,6 +5,7 @@ import ImagePreview from '../../components/ImagePreview';
 import {Wrapper} from '../../components/Wrapper';
 import {Link} from 'react-router-dom';
 import FormGroup from '../../components/FormGroup';
+import {OutlinedButton, TwitterButton, FbButton} from '../../components/Button'
 
 import twitter from '../../assets/icon-twitter.svg';
 import fb from '../../assets/icon-fb.svg';
@@ -40,7 +41,7 @@ const Signup = () => {
           </Or>
           <Form>
             <FormRow grid>
-              <FormGroup label="First name" mgR/>
+              <FormGroup label="First name" mgR="1.5rem"/>
               <FormGroup label="Last name"/>
             </FormRow>
 

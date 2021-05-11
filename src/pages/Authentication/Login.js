@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {useForm} from 'react-hook-form';
 
 import Header from '../../components/Header';
 import ImagePreview from '../../components/ImagePreview'
@@ -8,11 +9,12 @@ import {Wrapper} from '../../components/Wrapper';
 import {Container} from './AuthStyles';
 import FormGroup from '../../components/FormGroup';
 
-
 import twitter from '../../assets/icon-twitter.svg';
 import fb from '../../assets/icon-fb.svg'
 
 const Signin = () => {
+  const {register, } = useForm();
+
   return (
     <Wrapper>
       <Header>
@@ -163,6 +165,8 @@ const FormLink = styled(Link)`
   display: block;
   margin-bottom: 2.5rem;
   color: var(--white);
+  font-size: 1rem;
+  text-decoration: underline; 
   text-decoration-color: #9395AD;
 `
 

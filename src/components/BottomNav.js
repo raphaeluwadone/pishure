@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 import {Wrapper} from '../components/Wrapper'
 
-const BottomNav = () => {
+const BottomNav = ({file}) => {
   return (
     <Container>
       <ButtonWrap>
         <Cancel>Cancel</Cancel>
-        <Submit>Submit</Submit>
+        <Submit disabled={file ? false : true} file={file}>Submit</Submit>
       </ButtonWrap>
     </Container>
   )
@@ -42,6 +42,13 @@ const Submit = styled(Cancel)`
   margin-left: auto;
   background: var(--pishure-light-red);
   border: none;
+  pointer-events: none;
+  cursor: not-allowed;
+  ${(props) => props.file && `
+    pointer-events: initial;
+    cursor: pointer;
+    background: var(--pishure-red)
+  `}
 `
 
 export default BottomNav

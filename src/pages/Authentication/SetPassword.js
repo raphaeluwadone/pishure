@@ -93,21 +93,6 @@ const FormRow = styled.div`
   }
 `
 
-const Input = styled(Login)`
-  width: 100%;
-  margin-left: 0;
-  padding: 1rem;
-  font-size: 1rem;
-
-  ${(props) => props.mgR && `
-    margin-right: 1.5rem;
-  `}
-
-  &::placeholder{
-    color: #BEC0CE;
-  }
-`
-
 const Submit = styled.button`
   width: 100%;
   padding: 1rem;

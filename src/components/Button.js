@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const OutlinedButton = styled.button`
+export const OutlinedButton = styled.button`
   width: 100px;
   height: 40px;
   color: var(--white);
@@ -9,7 +9,7 @@ const OutlinedButton = styled.button`
   border-radius: var(--radius)
 `
 
-const TwitterButton = styled.button`
+export const TwitterButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +22,7 @@ const TwitterButton = styled.button`
   color: var(--white);
 `;
 
-const Fbutton = styled(OutlinedButton)`
+export const FbButton = styled(OutlinedButton)`
   flex: 19.78%;
   display: grid;
   place-items: center;

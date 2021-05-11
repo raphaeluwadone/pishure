@@ -3,6 +3,7 @@ import {createGlobalStyle} from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
   :root{
     --text: 'Heebo', sans-serif;
+    
     --black-900: #060813;
     --black-700: #12141D;
     --white: #fff;
@@ -12,6 +13,15 @@ export const GlobalStyles = createGlobalStyle`
     --pishure-red: #E21F3B;
     --pishure-light-red: #F3A4AF;
     --border-color: #3D416C;
+
+    --font-1: 3rem;
+    --font-1: 3rem;
+    --font-1: 3rem;
+    --font-1: 3rem;
+    --font-1: 3rem;
+    --font-1: 3rem;
+    --font-1: 3rem;
+    --font-1: 3rem;
   }
 
 
