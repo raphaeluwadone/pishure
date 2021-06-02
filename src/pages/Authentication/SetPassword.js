@@ -4,8 +4,11 @@ import styled from 'styled-components';
 import {Wrapper} from '../../components/Wrapper';
 import Header from '../../components/Header';
 import ImagePreview from '../../components/ImagePreview'
-import {Link} from 'react-router-dom';
 import FormGroup from '../../components/FormGroup';
+import { WideButton} from '../../components/Button';
+import {StyledButtonLink} from '../../components/Links';
+
+import {WrapperInner, Container, ImagePreviewWrap, FormWrapper, Headline, BodyText, Form, FormRow} from './AuthStyles';
 
 
 const SetPassword = () => {
@@ -14,7 +17,7 @@ const SetPassword = () => {
       <Header>
         <WrapperInner>
           New to Pishure?
-          <Login to="/signup">Sign up</Login>
+          <StyledButtonLink to="/signup">Sign up</StyledButtonLink>
         </WrapperInner>
       </Header>
       <Container>
@@ -25,15 +28,15 @@ const SetPassword = () => {
 
         <FormWrapper>
           <Headline>Set password.</Headline>
-          <BodyText>
+          <SetPasswordText>
             Create a new password. Make sure it is something you can easily remember.
-          </BodyText>
+          </SetPasswordText>
           
           <Form>
             <FormRow>
               <FormGroup type="password" label="Password"/>
             </FormRow>
-            <Submit type="submit">Set password</Submit>
+            <WideButton type="submit">Set password</WideButton>
           </Form>
         </FormWrapper>
       </Container>
@@ -41,65 +44,9 @@ const SetPassword = () => {
   )
 }
 
-const Login = styled(Link)`
-  padding: 0.6rem 2rem;
-  margin-left: 2rem;
-  color: var(--white);
-  background: #12141D;
-  text-decoration: none;
-  border: 1px solid #3D416C;
-  border-radius: var(--radius)
-`;
 
-const WrapperInner = styled.div``
-
-const Container = styled.div`
-  display: flex;
-  max-width: 75.9375rem;
-  justify-content: space-between;
-  margin-top: 4rem;
-  padding-bottom: 2rem;
-`
-
-const ImagePreviewWrap = styled.div``
-
-const FormWrapper = styled.div`
-  max-width: 28.125rem;
-`;
-
-const Headline = styled.h1`
-  margin-bottom: 1rem;
-  font-size: 2.25rem;
-  line-height: 1.3;
-`
-
-const BodyText = styled.p`
+const SetPasswordText = styled(BodyText)`
   margin-bottom: 5rem;
-  font-size: 1.125rem;
-  line-height: 1.5;
-  color: #E9EAEF;
-`
-
-
-
-const Form = styled.form``;
-
-const FormRow = styled.div`
-  display: flex;
-  margin-bottom: 1.5rem;
-
-  &.mg-b{
-    margin-bottom: 2.5rem;
-  }
-`
-
-const Submit = styled.button`
-  width: 100%;
-  padding: 1rem;
-  border-radius: var(--radius);
-  background: var(--pishure-red);
-  color: var(--white);
-  font-size: 1rem;
 `
 
 export default SetPassword;

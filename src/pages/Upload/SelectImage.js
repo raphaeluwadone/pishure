@@ -1,10 +1,9 @@
-import styled from "styled-components"
-import {useState } from 'react';
+import styled from "styled-components";
+import {StyledLink} from '../../components/Links';
 
 const SelectImage = ({handleFile, handleDrop}) => {
   const dragoverHandler = (ev) => {
     ev.preventDefault();
-    console.log('drag over active')
   }
   
   return (
@@ -32,7 +31,7 @@ const SelectImage = ({handleFile, handleDrop}) => {
           <Col>
             <DetailsText>
               <Dot>*</Dot>
-              <Span>Your uploads will be distributed for free under the <A>Pishure license.</A></Span>
+              <Span>Your uploads will be distributed for free under the <StyledLink>Pishure license.</StyledLink></Span>
             </DetailsText>
           </Col>
         </Details>
@@ -57,9 +56,8 @@ const DropTarget = styled.div`
 const UploadButton = styled.button`
   max-width: 17.8125rem;
   background: none;
-  
   color: var(--white);
-  font-size: 1.5rem;
+  font-size: var(--font-4);
   line-height: 1.8;
 `
 
@@ -107,18 +105,13 @@ const Col = styled.div`
 `
 
 const DetailsText = styled.p`
-  font-size: 1rem;
+  font-size: var(--font-6);
   position: relative;
   display: flex;
   
     &:not(:last-child){
       margin-bottom: 1.125rem;
     }
-`
-
-const A = styled.a`
-  color: var(--white);
-  text-decoration: underline;
 `
 
 const Dot = styled.span`

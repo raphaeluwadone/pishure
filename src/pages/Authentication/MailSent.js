@@ -5,6 +5,9 @@ import {Wrapper} from '../../components/Wrapper';
 import Header from '../../components/Header';
 import ImagePreview from '../../components/ImagePreview';
 import {Link} from 'react-router-dom';
+import {StyledButtonLink} from '../../components/Links';
+
+import {WrapperInner, Container, ImagePreviewWrap, FormWrapper, Headline, BodyText} from './AuthStyles';
 
 import mailIcon from '../../assets/icon-mail.svg'
 
@@ -14,7 +17,7 @@ const MailSent = () => {
       <Header>
         <WrapperInner>
           New to Pishure?
-          <Login to="/signup">Sign up</Login>
+          <StyledButtonLink to="/signup">Sign up</StyledButtonLink>
         </WrapperInner>
       </Header>
       <Container>
@@ -34,27 +37,7 @@ const MailSent = () => {
   )
 }
 
-const WrapperInner = styled.div``
 
-const Container = styled.div`
-  display: flex;
-  max-width: 75.75rem;
-  justify-content: space-between;
-  margin-top: 4rem;
-  padding-bottom: 2rem;
-`
-
-const Login = styled(Link)`
-  padding: 0.6rem 2rem;
-  margin-left: 2rem;
-  color: var(--white);
-  background: #12141D;
-  text-decoration: none;
-  border: 1px solid #3D416C;
-  border-radius: var(--radius)
-`;
-
-const ImagePreviewWrap = styled.div``
 
 const Content = styled.div`
   display: flex;
@@ -69,17 +52,5 @@ const MailIcon = styled.img`
   margin-bottom: 3.1875rem;
 `
 
-const Headline = styled.h1`
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  line-height: 1.3;
-`
-
-const BodyText = styled.p`
-  margin-bottom: 2.5rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #E9EAEF;
-`
 
 export default MailSent;

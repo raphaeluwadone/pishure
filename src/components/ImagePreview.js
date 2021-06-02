@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { StyledLink } from './Links';
 
 const ImagePreview = () => {
   return (
@@ -14,7 +15,7 @@ const ImagePreview = () => {
           <ImgBlock />
         </Col>
       </Grid>
-      <Caption>Photos by <A>Nnanna Egwu</A>, <A>Oluwamayowa Adeyemi</A>, <A>Arthur Okonkwo</A> and <A>Aderinsola Oluwafemi</A>.</Caption> 
+      <Caption>Photos by <StyledLink>Nnanna Egwu</StyledLink>, <StyledLink>Oluwamayowa Adeyemi</StyledLink>, <StyledLink>Arthur Okonkwo</StyledLink> and <StyledLink>Aderinsola Oluwafemi</StyledLink>.</Caption> 
     </>
   )
 }
@@ -44,12 +45,7 @@ const ImgBlock = styled.div`
 
 const Caption = styled.p`
   margin-top: 2rem;
-  font-size: 0.75rem;
-`;
-
-const A = styled.a`
-  text-decoration: underline var(--white);
-  cursor: pointer;
+  font-size: var(--font-8);
 `;
 
 export default ImagePreview;
