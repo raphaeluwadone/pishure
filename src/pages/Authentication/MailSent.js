@@ -4,10 +4,9 @@ import styled from 'styled-components';
 import {Wrapper} from '../../components/Wrapper';
 import Header from '../../components/Header';
 import ImagePreview from '../../components/ImagePreview';
-import {Link} from 'react-router-dom';
 import {StyledButtonLink} from '../../components/Links';
 
-import {WrapperInner, Container, ImagePreviewWrap, FormWrapper, Headline, BodyText} from './AuthStyles';
+import {WrapperInner, Container, ImagePreviewWrap} from './AuthStyles';
 
 import mailIcon from '../../assets/icon-mail.svg'
 
@@ -52,5 +51,13 @@ const MailIcon = styled.img`
   margin-bottom: 3.1875rem;
 `
 
+const Headline = styled.h1`
+  font-size: var(--font-4);
+  margin-bottom: 1rem;
+`
+
+const BodyText = styled.p`
+  font-size: var(--font-6)
+`
 
 export default MailSent;

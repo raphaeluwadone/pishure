@@ -46,7 +46,7 @@ const Upload = () => {
 
       {imageSizeError && <ErrorBanner>{imageSizeError}</ErrorBanner>}
       
-      {file ? <UploadImageForm imgFile={file} /> : <SelectImage handleFile={handleFile} handleDrop={handleDrop}/>}
+      {file ? <UploadImageForm setFile={setFile} imgFile={file} /> : <SelectImage handleFile={handleFile} handleDrop={handleDrop}/>}
 
       <BottomNav file={file}/>
     </>

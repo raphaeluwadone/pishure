@@ -40,7 +40,6 @@ export const GlobalStyles = createGlobalStyle`
 
   img{
     display: block;
-    max-width: 100%
   }
 
   input,
