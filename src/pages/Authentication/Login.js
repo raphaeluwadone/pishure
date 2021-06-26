@@ -1,14 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { useForm } from "react-hook-form";
-
 import Header from "../../components/Header";
 import ImagePreview from "../../components/ImagePreview";
 import { Wrapper } from "../../components/Wrapper";
 import FormGroup from "../../components/FormGroup";
 import { TwitterButton, FbButton, WideButton } from "../../components/Button";
 import { StyledButtonLink, StyledLink } from "../../components/Links";
-
 import {
   WrapperInner,
   Container,
@@ -24,7 +21,7 @@ import {
   Form,
   FormRow,
 } from "./AuthStyles";
-
+import { useFormValidation } from "../hooks/useFormValidation";
 import twitter from "../../assets/icon-twitter.svg";
 import fb from "../../assets/icon-fb.svg";
 
@@ -33,7 +30,7 @@ const Signin = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useFormValidation();
 
   console.log(errors);
   const submitHandler = d => {
