@@ -26,11 +26,7 @@ import twitter from "../../assets/icon-twitter.svg";
 import fb from "../../assets/icon-fb.svg";
 
 const Signin = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useFormValidation();
+  const { register, handleSubmit, errors } = useFormValidation();
 
   console.log(errors);
   const submitHandler = d => {
