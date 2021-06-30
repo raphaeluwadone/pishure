@@ -1,47 +1,63 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import { GlobalStyles } from "./GlobalStyles";
+import { PrivateRoute } from "./components/PrivateRoute";
 
 import {
-	Login,
-	Signup,
-	ForgotPassword,
-	SetPassword,
-	MailSent,
+  Login,
+  Signup,
+  ForgotPassword,
+  SetPassword,
+  MailSent,
 } from "./pages/Authentication";
 
 import Upload from "./pages/Upload";
+import { useUserContext } from "./context/UserContext";
 
 function App() {
-	return (
-		<Router>
-			<GlobalStyles />
-			<Switch>
-				<Route path="/signup">
-					<Signup />
-				</Route>
+  const { user, setUser } = useUserContext();
 
-				<Route path="/login">
-					<Login />
-				</Route>
+  return (
+    <Router>
+      <GlobalStyles />
+      <Switch>
+        <Route path='/signup'>
+          <Signup />
+        </Route>
 
-				<Route path="/forgotpassword">
-					<ForgotPassword />
-				</Route>
+        <Route
+          path='/login'
+          render={props => {
+            return user ? <Redirect to={props.location} /> : <Login />;
+          }}
+        />
 
-				<Route path="/setpassword">
-					<SetPassword />
-				</Route>
+        <Route path='/forgotpassword'>
+          <ForgotPassword />
+        </Route>
 
-				<Route path="/mailsent">
-					<MailSent />
-				</Route>
+        <Route path='/setpassword'>
+          <SetPassword />
+        </Route>
 
-				<Route path="/upload">
-					<Upload />
-				</Route>
-			</Switch>
-		</Router>
-	);
+        <Route path='/mailsent'>
+          <MailSent />
+        </Route>
+
+        <PrivateRoute user={user} path='/upload'>
+          <Upload />
+        </PrivateRoute>
+
+        <Route path='*'>
+          <h2>(404) Page not found</h2>
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;

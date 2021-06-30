@@ -1,19 +1,10 @@
-import React from 'react'
-import {Link} from 'react-router-dom';
-import logo from '../assets/logo.svg';
-import styled from 'styled-components';
+import React from "react";
 
-const Header = ({children}) => {
-  return (
-      <Nav>
-        <Link to="/">
-          <Logo src={logo}/>
-        </Link>
-        
-        {children}
-      </Nav>
-  )
-}
+import styled from "styled-components";
+
+const Header = ({ children }) => {
+  return <Nav>{children}</Nav>;
+};
 
 const Nav = styled.nav`
   display: flex;
@@ -21,9 +12,6 @@ const Nav = styled.nav`
   align-items: center;
   height: 6.25rem;
   font-size: 0.875rem;
-`
-
-
-const Logo = styled.img``
+`;
 
 export default Header;

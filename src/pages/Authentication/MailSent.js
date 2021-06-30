@@ -1,22 +1,24 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import {Wrapper} from '../../components/Wrapper';
-import Header from '../../components/Header';
-import ImagePreview from '../../components/ImagePreview';
-import {StyledButtonLink} from '../../components/Links';
+import { Wrapper } from "../../components/Wrapper";
+import Header from "../../components/Header";
+import ImagePreview from "../../components/ImagePreview";
+import Logo from "../../components/Logo";
+import { StyledButtonLink } from "../../components/Links";
 
-import {WrapperInner, Container, ImagePreviewWrap} from './AuthStyles';
+import { WrapperInner, Container, ImagePreviewWrap } from "./AuthStyles";
 
-import mailIcon from '../../assets/icon-mail.svg'
+import mailIcon from "../../assets/icon-mail.svg";
 
 const MailSent = () => {
   return (
     <Wrapper>
       <Header>
+        <Logo />
         <WrapperInner>
           New to Pishure?
-          <StyledButtonLink to="/signup">Sign up</StyledButtonLink>
+          <StyledButtonLink to='/signup'>Sign up</StyledButtonLink>
         </WrapperInner>
       </Header>
       <Container>
@@ -25,18 +27,17 @@ const MailSent = () => {
         </ImagePreviewWrap>
 
         <Content>
-          <MailIcon src={mailIcon}/>
+          <MailIcon src={mailIcon} />
           <Headline>We’ve sent you a mail.</Headline>
           <BodyText>
-            Please check your email and click on the link to reset your password.
+            Please check your email and click on the link to reset your
+            password.
           </BodyText>
         </Content>
       </Container>
     </Wrapper>
-  )
-}
-
-
+  );
+};
 
 const Content = styled.div`
   display: flex;
@@ -49,15 +50,15 @@ const Content = styled.div`
 
 const MailIcon = styled.img`
   margin-bottom: 3.1875rem;
-`
+`;
 
 const Headline = styled.h1`
   font-size: var(--font-4);
   margin-bottom: 1rem;
-`
+`;
 
 const BodyText = styled.p`
-  font-size: var(--font-6)
-`
+  font-size: var(--font-6);
+`;
 
 export default MailSent;

@@ -4,7 +4,12 @@ import Header from "../../components/Header";
 import ImagePreview from "../../components/ImagePreview";
 import { Wrapper } from "../../components/Wrapper";
 import FormGroup from "../../components/FormGroup";
-import { TwitterButton, FbButton, WideButton } from "../../components/Button";
+import Logo from "../../components/Logo";
+import {
+  TwitterButton,
+  FbButton,
+  PrimaryButton,
+} from "../../components/Button";
 import { StyledButtonLink, StyledLink } from "../../components/Links";
 import {
   WrapperInner,
@@ -36,6 +41,7 @@ const Signin = () => {
   return (
     <Wrapper>
       <Header>
+        <Logo />
         <WrapperInner>
           New to Pishure?
           <StyledButtonLink to='/signup'>Sign up</StyledButtonLink>
@@ -87,7 +93,9 @@ const Signin = () => {
               />
             </FormRow>
             <FormLink>Forgot password?</FormLink>
-            <WideButton type='submit'>Login</WideButton>
+            <PrimaryButton width='100%' height='3.5rem' type='submit'>
+              Login
+            </PrimaryButton>
           </Form>
         </FormWrapper>
       </Container>

@@ -1,15 +1,19 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const OutlinedButton = styled.button`
-  width: 6.25rem;
-  height: 2.5rem;
+export const PrimaryButton = styled.button`
+  width: ${props => props.width || "6.25rem"};
+  height: ${props => props.height || "2.5rem"};
+  background: var(--pishure-red);
   line-height: 1.5;
-  font-size: 0.875rem;
+  font-size: ${props => props.fontSize || "var(--font-7)"};
   color: var(--white);
+  border-radius: var(--radius);
+`;
+
+export const OutlinedButton = styled(PrimaryButton)`
   background: var(--black-700);
-  border: 1px solid #3D416C;
-  border-radius: var(--radius)
-`
+  border: 1px solid #3d416c;
+`;
 
 export const TwitterButton = styled.button`
   display: flex;
@@ -30,14 +34,4 @@ export const FbButton = styled(OutlinedButton)`
   display: grid;
   place-items: center;
   margin: 0;
-`
-
-export const WideButton = styled.button`
-  width: 100%;
-  padding: 1rem;
-  border-radius: var(--radius);
-  background: var(--pishure-red);
-  color: var(--white);
-  font-size: 1rem;
-`
-
+`;

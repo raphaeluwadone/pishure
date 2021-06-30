@@ -5,7 +5,8 @@ import { Wrapper } from "../../components/Wrapper";
 import Header from "../../components/Header";
 import ImagePreview from "../../components/ImagePreview";
 import FormGroup from "../../components/FormGroup";
-import { WideButton } from "../../components/Button";
+import { PrimaryButton } from "../../components/Button";
+import Logo from "../../components/Logo";
 import { StyledButtonLink } from "../../components/Links";
 import { useFormValidation } from "../hooks/useFormValidation";
 import {
@@ -28,6 +29,7 @@ const SetPassword = () => {
   return (
     <Wrapper>
       <Header>
+        <Logo />
         <WrapperInner>
           New to Pishure?
           <StyledButtonLink to='/signup'>Sign up</StyledButtonLink>
@@ -54,7 +56,9 @@ const SetPassword = () => {
                 label='Password'
               />
             </FormRow>
-            <WideButton type='submit'>Set password</WideButton>
+            <PrimaryButton width='100%' height='3.5rem' type='submit'>
+              Set password
+            </PrimaryButton>
           </Form>
         </FormWrapper>
       </Container>

@@ -1,7 +1,18 @@
 import { Route, Redirect } from "react-router-dom";
 
-const PrivateRoute = ({ route, user, children }) => {
-  return <Route />;
+const PrivateRoute = ({ path, user, children }) => {
+  return (
+    <Route
+      path={path}
+      render={({ location }) => {
+        return user ? (
+          children
+        ) : (
+          <Redirect to={{ pathname: "/login", state: { from: location } }} />
+        );
+      }}
+    />
+  );
 };
 
-export default PrivateRoute;
+export { PrivateRoute };

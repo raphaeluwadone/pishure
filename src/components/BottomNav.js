@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { Wrapper } from "../components/Wrapper";
+import { PrimaryButton, OutlinedButton } from "./Button";
 
 const BottomNav = ({ file }) => {
   return (
@@ -28,22 +29,11 @@ const ButtonWrap = styled(Wrapper)`
   justify-content: space-between;
 `;
 
-const Cancel = styled.button`
-  width: 6.25rem;
-  height: 2.5rem;
-  display: inline-block;
-  line-height: 1.5;
-  color: var(--white);
-  font-size: 0.875rem;
-  border-radius: var(--radius);
-  background: var(--black-700);
-  border: 1px solid #3d416c;
-`;
+const Cancel = styled(OutlinedButton)``;
 
-const Submit = styled(Cancel)`
+const Submit = styled(PrimaryButton)`
   margin-left: auto;
   background: var(--pishure-light-red);
-  border: none;
   pointer-events: none;
   cursor: not-allowed;
   ${props =>
