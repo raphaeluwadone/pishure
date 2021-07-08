@@ -1,24 +1,32 @@
-import React from 'react';
-import styled from 'styled-components/macro';
-import { StyledLink } from './Links';
+import React from "react";
+import styled from "styled-components/macro";
+import { StyledTextLink } from "./Links";
 
 const ImagePreview = () => {
   return (
     <>
       <Grid>
         <Col>
-          <ImgBlock mgB/>
+          <ImgBlock mgB />
           <ImgBlock />
         </Col>
         <Col padT>
-          <ImgBlock mgB/>
+          <ImgBlock mgB />
           <ImgBlock />
         </Col>
       </Grid>
-      <Caption>Photos by <StyledLink>Nnanna Egwu</StyledLink>, <StyledLink>Oluwamayowa Adeyemi</StyledLink>, <StyledLink>Arthur Okonkwo</StyledLink> and <StyledLink>Aderinsola Oluwafemi</StyledLink>.</Caption> 
     </>
-  )
-}
+  );
+};
+
+export const ImagePreviewDetails = () => (
+  <Caption>
+    Photos by <StyledTextLink>Nnanna Egwu</StyledTextLink>,{" "}
+    <StyledTextLink>Oluwamayowa Adeyemi</StyledTextLink>,{" "}
+    <StyledTextLink>Arthur Okonkwo</StyledTextLink> and{" "}
+    <StyledTextLink>Aderinsola Oluwafemi</StyledTextLink>.
+  </Caption>
+);
 
 const Grid = styled.div`
   display: inline-grid;
@@ -27,18 +35,22 @@ const Grid = styled.div`
 `;
 
 const Col = styled.div`
-  ${(props) => props.padT && `
+  ${props =>
+    props.padT &&
+    `
       padding-top: 4.75rem;
   `}
-`
+`;
 
 const ImgBlock = styled.div`
   width: 15.625rem;
   height: 21.25rem;
   border-radius: var(--radius);
-  background-color: #9B9B9B;
+  background-color: #9b9b9b;
 
-  ${(props) => props.mgB && `
+  ${props =>
+    props.mgB &&
+    `
     margin-bottom: 1.5rem;
   `}
 `;

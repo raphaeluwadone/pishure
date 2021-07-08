@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { Wrapper } from "../../components/Wrapper";
 import Header from "../../components/Header";
-import ImagePreview from "../../components/ImagePreview";
+import ImagePreview, {ImagePreviewDetails} from "../../components/ImagePreview";
 import Logo from "../../components/Logo";
 import { StyledButtonLink } from "../../components/Links";
 
@@ -24,6 +24,7 @@ const MailSent = () => {
       <Container>
         <ImagePreviewWrap>
           <ImagePreview />
+          <ImagePreviewDetails />
         </ImagePreviewWrap>
 
         <Content>

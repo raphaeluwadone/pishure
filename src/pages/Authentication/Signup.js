@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 import Header from "../../components/Header";
-import ImagePreview from "../../components/ImagePreview";
+import ImagePreview, {
+  ImagePreviewDetails,
+} from "../../components/ImagePreview";
 import { Wrapper } from "../../components/Wrapper";
 import FormGroup from "../../components/FormGroup";
 import Logo from "../../components/Logo";
@@ -11,7 +13,7 @@ import {
   FbButton,
   PrimaryButton,
 } from "../../components/Button";
-import { StyledButtonLink, StyledLink } from "../../components/Links";
+import { StyledButtonLink, StyledTextLink } from "../../components/Links";
 import {
   WrapperInner,
   Container,
@@ -57,6 +59,7 @@ const Signup = () => {
       <Container>
         <ImagePreviewWrap>
           <ImagePreview />
+          <ImagePreviewDetails />
         </ImagePreviewWrap>
 
         <FormWrapper>
@@ -117,14 +120,14 @@ const Signup = () => {
                 minlength={8}
               />
             </FormRow>
-            <Submit width='100%' height='3.5rem' type='submit'>
+            <Submit style={{ width: "100%", height: "3.5rem" }} type='submit'>
               Sign Up
             </Submit>
           </Form>
           <FormText>
             By signing up, you agree to our{" "}
-            <StyledLink>Terms of Service</StyledLink> and{" "}
-            <StyledLink>Privacy Policy</StyledLink>.
+            <StyledTextLink>Terms of Service</StyledTextLink> and{" "}
+            <StyledTextLink>Privacy Policy</StyledTextLink>.
           </FormText>
         </FormWrapper>
       </Container>

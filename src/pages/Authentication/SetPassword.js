@@ -3,7 +3,9 @@ import styled from "styled-components";
 
 import { Wrapper } from "../../components/Wrapper";
 import Header from "../../components/Header";
-import ImagePreview from "../../components/ImagePreview";
+import ImagePreview, {
+  ImagePreviewDetails,
+} from "../../components/ImagePreview";
 import FormGroup from "../../components/FormGroup";
 import { PrimaryButton } from "../../components/Button";
 import Logo from "../../components/Logo";
@@ -38,6 +40,7 @@ const SetPassword = () => {
       <Container>
         <ImagePreviewWrap>
           <ImagePreview />
+          <ImagePreviewDetails />
         </ImagePreviewWrap>
 
         <FormWrapper>
@@ -56,7 +59,10 @@ const SetPassword = () => {
                 label='Password'
               />
             </FormRow>
-            <PrimaryButton width='100%' height='3.5rem' type='submit'>
+            <PrimaryButton
+              style={{ width: "100%", height: "3.5rem" }}
+              type='submit'
+            >
               Set password
             </PrimaryButton>
           </Form>

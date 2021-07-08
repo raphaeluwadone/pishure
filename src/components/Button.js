@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const PrimaryButton = styled.button`
-  width: ${props => props.width || "6.25rem"};
-  height: ${props => props.height || "2.5rem"};
+  padding: 0.7rem 1.7rem;
   background: var(--pishure-red);
   line-height: 1.5;
   font-size: ${props => props.fontSize || "var(--font-7)"};

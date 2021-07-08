@@ -3,7 +3,9 @@ import styled from "styled-components";
 
 import { Wrapper } from "../../components/Wrapper";
 import Header from "../../components/Header";
-import ImagePreview from "../../components/ImagePreview";
+import ImagePreview, {
+  ImagePreviewDetails,
+} from "../../components/ImagePreview";
 import FormGroup from "../../components/FormGroup";
 import { PrimaryButton } from "../../components/Button";
 import { StyledButtonLink } from "../../components/Links";
@@ -38,6 +40,7 @@ const ForgotPassword = () => {
       <Container>
         <ImagePreviewWrap>
           <ImagePreview />
+          <ImagePreviewDetails />
         </ImagePreviewWrap>
 
         <FormWrapper>
@@ -55,7 +58,10 @@ const ForgotPassword = () => {
                 label='Email address'
               />
             </FormRow>
-            <PrimaryButton width='100%' height='3.5rem' type='submit'>
+            <PrimaryButton
+              style={{ width: "100%", height: "3.5rem" }}
+              type='submit'
+            >
               Submit
             </PrimaryButton>
           </Form>

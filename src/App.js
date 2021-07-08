@@ -15,26 +15,36 @@ import {
   MailSent,
 } from "./pages/Authentication";
 
+import Home from "./pages/Home";
+
 import Upload from "./pages/Upload";
 import { useUserContext } from "./context/UserContext";
 
 function App() {
-  const { user, setUser } = useUserContext();
+  const { user } = useUserContext();
 
   return (
     <Router>
       <GlobalStyles />
       <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+
         <Route path='/signup'>
           <Signup />
         </Route>
-
+        {/* 
         <Route
           path='/login'
           render={props => {
-            return user ? <Redirect to={props.location} /> : <Login />;
+            return user ? <Redirect to='/' /> : <Login {...props} />;
           }}
-        />
+        /> */}
+
+        <Route path='/login'>
+          <Login />
+        </Route>
 
         <Route path='/forgotpassword'>
           <ForgotPassword />

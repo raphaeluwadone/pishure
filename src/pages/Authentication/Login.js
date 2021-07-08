@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "../../components/Header";
-import ImagePreview from "../../components/ImagePreview";
+import ImagePreview, {
+  ImagePreviewDetails,
+} from "../../components/ImagePreview";
 import { Wrapper } from "../../components/Wrapper";
 import FormGroup from "../../components/FormGroup";
 import Logo from "../../components/Logo";
@@ -50,6 +52,7 @@ const Signin = () => {
       <Container>
         <ImagePreviewWrap>
           <ImagePreview />
+          <ImagePreviewDetails />
         </ImagePreviewWrap>
 
         <FormWrapper>
@@ -92,8 +95,11 @@ const Signin = () => {
                 required
               />
             </FormRow>
-            <FormLink>Forgot password?</FormLink>
-            <PrimaryButton width='100%' height='3.5rem' type='submit'>
+            <FormLink to='/forgotpassword'>Forgot password?</FormLink>
+            <PrimaryButton
+              style={{ width: "100%", height: "3.5rem" }}
+              type='submit'
+            >
               Login
             </PrimaryButton>
           </Form>
@@ -107,6 +113,7 @@ const FormLink = styled(StyledLink)`
   display: block;
   margin-bottom: 2.5rem;
   font-size: var(--font-6);
+  text-decoration: underline var(--white);
 `;
 
 export default Signin;
