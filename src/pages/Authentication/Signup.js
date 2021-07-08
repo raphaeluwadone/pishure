@@ -53,7 +53,9 @@ const Signup = () => {
         <Logo />
         <WrapperInner>
           Already have an account
-          <StyledButtonLink to='/login'>Login</StyledButtonLink>
+          <StyledButtonLink style={{ marginLeft: "2rem" }} to='/login'>
+            Login
+          </StyledButtonLink>
         </WrapperInner>
       </Header>
       <Container>

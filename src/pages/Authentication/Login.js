@@ -46,7 +46,9 @@ const Signin = () => {
         <Logo />
         <WrapperInner>
           New to Pishure?
-          <StyledButtonLink to='/signup'>Sign up</StyledButtonLink>
+          <StyledButtonLink style={{ marginLeft: "2rem" }} to='/signup'>
+            Sign up
+          </StyledButtonLink>
         </WrapperInner>
       </Header>
       <Container>

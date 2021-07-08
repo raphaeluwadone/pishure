@@ -3,7 +3,9 @@ import styled from "styled-components";
 
 import { Wrapper } from "../../components/Wrapper";
 import Header from "../../components/Header";
-import ImagePreview, {ImagePreviewDetails} from "../../components/ImagePreview";
+import ImagePreview, {
+  ImagePreviewDetails,
+} from "../../components/ImagePreview";
 import Logo from "../../components/Logo";
 import { StyledButtonLink } from "../../components/Links";
 
@@ -18,7 +20,9 @@ const MailSent = () => {
         <Logo />
         <WrapperInner>
           New to Pishure?
-          <StyledButtonLink to='/signup'>Sign up</StyledButtonLink>
+          <StyledButtonLink style={{ marginLeft: "2rem" }} to='/signup'>
+            Sign up
+          </StyledButtonLink>
         </WrapperInner>
       </Header>
       <Container>

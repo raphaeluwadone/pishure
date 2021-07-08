@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const StyledButtonLink = styled(Link)`
   padding: 0.7rem 1.7rem;
-  margin-left: 2rem;
   color: var(--white);
   background: var(--black-700);
   text-decoration: none;
