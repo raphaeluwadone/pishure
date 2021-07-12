@@ -38,7 +38,7 @@ const FormGroup = ({
   );
 };
 
-const InputBox = styled.div`
+export const InputBox = styled.div`
   padding: 0 1rem;
   width: 100%;
   height: 3.5rem;
@@ -54,7 +54,7 @@ const InputBox = styled.div`
   `}
 `;
 
-const InputField = styled.input`
+export const InputField = styled.input`
   background: none;
   border: none;
   font-size: 1rem;

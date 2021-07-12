@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   :root{
@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     --black-700: #12141D;
     --white: #fff;
     --radius: 0.3125rem;
-    --grey-90%: ;
+    --grey-10: #E9EAEF;
     --twitter-blue: #1DA1F2;
     --pishure-red: #E21F3B;
     --pishure-light-red: #F3A4AF;
@@ -57,4 +57,4 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
   
-`
+`;

@@ -28,6 +28,8 @@ export const ImagePreviewDetails = () => (
   </Caption>
 );
 
+export const ImagePreviewWrap = styled.div``;
+
 const Grid = styled.div`
   display: inline-grid;
   grid-template-columns: 1fr 1fr;

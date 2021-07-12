@@ -3,8 +3,9 @@ import styled from "styled-components";
 import Header from "../../components/Header";
 import ImagePreview, {
   ImagePreviewDetails,
+  ImagePreviewWrap,
 } from "../../components/ImagePreview";
-import { Wrapper } from "../../components/Wrapper";
+import { Wrapper, Container } from "../../components/Wrapper";
 import FormGroup from "../../components/FormGroup";
 import Logo from "../../components/Logo";
 import {
@@ -15,8 +16,6 @@ import {
 import { StyledButtonLink, StyledLink } from "../../components/Links";
 import {
   WrapperInner,
-  Container,
-  ImagePreviewWrap,
   FormWrapper,
   Headline,
   BodyText,

@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Wrapper } from "../../components/Wrapper";
+import { Wrapper, Container } from "../../components/Wrapper";
 import Header from "../../components/Header";
 import ImagePreview, {
   ImagePreviewDetails,
+  ImagePreviewWrap,
 } from "../../components/ImagePreview";
 import Logo from "../../components/Logo";
 import { StyledButtonLink } from "../../components/Links";
 
-import { WrapperInner, Container, ImagePreviewWrap } from "./AuthStyles";
+import { WrapperInner } from "./AuthStyles";
 
 import mailIcon from "../../assets/icon-mail.svg";
 

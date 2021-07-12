@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Wrapper } from "../../components/Wrapper";
+import { Wrapper, Container } from "../../components/Wrapper";
 import Header from "../../components/Header";
 import ImagePreview, {
   ImagePreviewDetails,
+  ImagePreviewWrap,
 } from "../../components/ImagePreview";
 import FormGroup from "../../components/FormGroup";
 import { PrimaryButton } from "../../components/Button";
@@ -13,8 +14,6 @@ import { StyledButtonLink } from "../../components/Links";
 import { useFormValidation } from "../hooks/useFormValidation";
 import {
   WrapperInner,
-  Container,
-  ImagePreviewWrap,
   FormWrapper,
   Headline,
   BodyText,
