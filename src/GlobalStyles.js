@@ -36,6 +36,7 @@ export const GlobalStyles = createGlobalStyle`
     background: var(--black-900);
     font-family: var(--text);
     color: var(--white);
+    overflow-x: hidden;
   }
 
   img{

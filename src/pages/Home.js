@@ -8,6 +8,7 @@ import { StyledButtonLink, StyledLink } from "../components/Links";
 import { PrimaryButton } from "../components/Button";
 import ImagePreview, { ImagePreviewDetails } from "../components/ImagePreview";
 import { SearchInput } from "../components/SearchInput";
+import ImageGrid from "../components/ImageGrid";
 
 import more from "../assets/more.svg";
 
@@ -33,7 +34,12 @@ const Home = () => {
         <Logo />
         {navSideContent}
       </Header>
-      <Container style={{ marginTop: "9.75rem", paddingBottom: "0" }}>
+      <Container
+        style={{
+          marginTop: "9.75rem",
+          paddingBottom: "0",
+        }}
+      >
         <Col>
           <Heading>Best Collection of Nigerian Stock Photos.</Heading>
           <Body>
@@ -44,10 +50,12 @@ const Home = () => {
           <SearchExample>
             <Span>Try:</Span>danfo, street, traffic, lagos life,
           </SearchExample>
-          <ImagePreviewDetails />
         </Col>
         <ImagePreview />
       </Container>
+      <ImagePreviewDetails />
+      <Pad />
+      <ImageGrid />
     </Wrapper>
   );
 };
@@ -80,6 +88,10 @@ const Heading = styled.h1`
   line-height: 1.3;
 `;
 
+const Pad = styled.div`
+  margin-bottom: 122px;
+`;
+
 const Body = styled.p`
   margin-bottom: 3rem;
   font-size: var(--font-5);
@@ -95,7 +107,6 @@ const Span = styled.span`
 const SearchExample = styled.p`
   font-size: 1rem;
   color: var(--grey-10);
-  margin-bottom: 17.75rem;
 `;
 
 export default Home;
