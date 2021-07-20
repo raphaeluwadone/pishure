@@ -14,11 +14,11 @@ import {
   SetPassword,
   MailSent,
 } from "./pages/Authentication";
+import { useUserContext } from "./context/UserContext";
 
 import Home from "./pages/Home";
-
 import Upload from "./pages/Upload";
-import { useUserContext } from "./context/UserContext";
+import SearchResults from "./pages/Search/SearchResults";
 
 function App() {
   const { user } = useUserContext();
@@ -56,6 +56,10 @@ function App() {
 
         <Route path='/mailsent'>
           <MailSent />
+        </Route>
+
+        <Route path='/search'>
+          <SearchResults />
         </Route>
 
         <PrivateRoute user={user} path='/upload'>

@@ -1,42 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Header from "../components/Header";
+import { Link } from "react-router-dom";
 import { Wrapper, Container } from "../components/Wrapper";
-import Logo from "../components/Logo";
-import { StyledButtonLink, StyledLink } from "../components/Links";
-import { PrimaryButton } from "../components/Button";
 import ImagePreview, { ImagePreviewDetails } from "../components/ImagePreview";
 import { SearchInput } from "../components/SearchInput";
 import ImageGrid from "../components/ImageGrid";
-
+import Header from "../components/Header";
 import more from "../assets/more.svg";
+import Logo from "../components/Logo";
+import { StyledLink, StyledButtonLink } from "../components/Links";
+import { PrimaryButton } from "../components/Button";
 
 const Home = () => {
-  const navSideContent = (
-    <NavRight>
-      <More src={more} />
-      <p>Explore</p>
-      <StyledButtonLink style={{ borderColor: "var(--white)" }}>
-        Submit a photo
-      </StyledButtonLink>
-      <Bar />
-      <StyledLink>Login</StyledLink>
-      <PrimaryButton as={Link} to='/signup'>
-        Signup
-      </PrimaryButton>
-    </NavRight>
-  );
-
   return (
     <Wrapper>
       <Header>
         <Logo />
-        {navSideContent}
+        <NavSideContent />
       </Header>
       <Container
         style={{
-          marginTop: "9.75rem",
+          marginTop: "8.25rem",
           paddingBottom: "0",
         }}
       >
@@ -60,6 +44,36 @@ const Home = () => {
   );
 };
 
+export const NavSideContent = () => {
+  const navSideContent = (
+    <NavRight>
+      <More src={more} />
+      <p>Explore</p>
+      <StyledButtonLink style={{ borderColor: "var(--white)" }}>
+        Submit a photo
+      </StyledButtonLink>
+      <Bar />
+      <StyledLink>Login</StyledLink>
+      <PrimaryButton as={Link} to='/signup'>
+        Signup
+      </PrimaryButton>
+    </NavRight>
+  );
+
+  return navSideContent;
+};
+
+const Col = styled.div`
+  max-width: 33.75rem;
+`;
+
+const Heading = styled.h1`
+  font-size: var(--font-1);
+  margin-bottom: 1rem;
+  margin-top: 12.5rem;
+  line-height: 1.3;
+`;
+
 const NavRight = styled.div`
   display: flex;
   align-items: center;
@@ -76,17 +90,6 @@ const Bar = styled.div`
 `;
 
 const More = styled.img``;
-
-const Col = styled.div`
-  max-width: 33.75rem;
-`;
-
-const Heading = styled.h1`
-  font-size: var(--font-1);
-  margin-bottom: 1rem;
-  margin-top: 12.5rem;
-  line-height: 1.3;
-`;
 
 const Pad = styled.div`
   margin-bottom: 122px;

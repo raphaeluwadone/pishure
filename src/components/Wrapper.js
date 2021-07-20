@@ -18,6 +18,6 @@ export const Container = styled.div`
   display: flex;
   max-width: 73rem;
   justify-content: space-between;
-  margin-top: calc(10.5rem);
+  margin-top: 10.5rem;
   padding-bottom: 2rem;
 `;

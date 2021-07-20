@@ -29,7 +29,8 @@ const UploadImageForm = ({ imgFile, setFile }) => {
           <Label>Description (optional)</Label>
           <LargeTextField
             {...register("description")}
-            placeholder='Write something interesting...'></LargeTextField>
+            placeholder='Write something interesting...'
+          ></LargeTextField>
         </Row>
       </Form>
     </Container>

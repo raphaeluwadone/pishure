@@ -2,13 +2,12 @@ import styled from "styled-components";
 import camera from "../assets/icon-camera.svg";
 import search from "../assets/icon-search.svg";
 import { InputBox, InputField } from "./FormGroup";
-import { StyledLink } from "./Links";
 
 export const SearchInput = () => {
-  const uploadLink = (
-    <SearchImageLink>
+  const SearchImage = (
+    <SearchImageButton>
       <IconImage src={camera} />
-    </SearchImageLink>
+    </SearchImageButton>
   );
   return (
     <SearchWrapper>
@@ -22,7 +21,7 @@ export const SearchInput = () => {
         }}
       >
         <InputField placeholder='Search high quality photos for free!...' />
-        {uploadLink}
+        {SearchImage}
       </InputBox>
       <SearchButton>
         <IconImage src={search} />
@@ -38,7 +37,9 @@ const SearchWrapper = styled.form`
 
 const IconImage = styled.img``;
 
-const SearchImageLink = styled(StyledLink)``;
+const SearchImageButton = styled.button`
+  background: none;
+`;
 
 const SearchButton = styled.button`
   width: 4.625rem;
