@@ -29,6 +29,12 @@ const TabInner = styled.ul`
   white-space: nowrap;
   scroll-behavior: smooth;
   width: 100%;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 
 const TabItem = styled.li`
