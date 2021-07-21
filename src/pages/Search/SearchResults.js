@@ -7,6 +7,17 @@ import Header from "../../components/Header";
 import Logo from "../../components/Logo";
 import { NavSideContent } from "../Home";
 import camera from "../../assets/icon-camera.svg";
+import TabContainer from "./TabContainer";
+
+const tabs = [
+  "Lifestyle",
+  "Happy",
+  "Model",
+  "Woman",
+  "Fashion",
+  "Black and White",
+  "Woman Smiling",
+];
 
 const SearchResults = () => {
   return (
@@ -24,31 +35,41 @@ const SearchResults = () => {
           <FilterWrapper>
             <FilterText>Sort By</FilterText>
             <Label>
-              <Input type='checkbox' />
+              <Checkbox />
               Most relevant
             </Label>
             <Label>
-              <Input type='checkbox' />
+              <Checkbox />
               Newest
             </Label>
           </FilterWrapper>
           <FilterWrapper>
             <FilterText>Orientation</FilterText>
             <Label>
-              <Input type='checkbox' />
+              <Checkbox />
               All Orientation
             </Label>
             <Label>
-              <Input type='checkbox' />
+              <Checkbox />
               Landscape
             </Label>
             <Label>
-              <Input type='checkbox' />
+              <Checkbox />
               Portrait
             </Label>
           </FilterWrapper>
+          <FilterWrapper>
+            <FilterText style={{ marginBottom: "10px" }}>Color</FilterText>
+            <Input as='input' placeholder='Enter hex or select' />
+          </FilterWrapper>
         </SidebarContent>
-        <MainContent></MainContent>
+        <MainContent>
+          <Headline>Portrait</Headline>
+          <BodyText>
+            100+ portrait photos, available to download for free.
+          </BodyText>
+          <TabContainer style={{ marginBottom: "2rem" }} items={tabs} />
+        </MainContent>
       </Container>
     </Wrapper>
   );
@@ -84,11 +105,6 @@ const SearchForm = styled.form`
   }
 `;
 
-const Div = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
 const Image = styled.img`
   width: 1rem;
   height: 1rem;
@@ -100,30 +116,89 @@ const SearchImageButton = styled(OutlinedButton)`
   border-bottom-left-radius: 0;
 `;
 
-const Container = styled.div`
+const Div = styled.div`
   display: flex;
-  margin-top: 6.25rem;
 `;
 
-const SidebarContent = styled.div``;
+const Container = styled.div`
+  display: flex;
+  width: 100%;
+  margin-top: 6.25rem;
+  column-gap: 39px;
+`;
 
-const FilterWrapper = styled.div``;
+const SidebarContent = styled.div`
+  width: 163px;
+`;
 
-const FilterText = styled.div``;
+const FilterWrapper = styled.div`
+  margin-bottom: 64px;
+`;
 
-const Input = styled.input``;
+const FilterText = styled.div`
+  color: #bec0ce;
+  margin-bottom: 1rem;
+`;
 
-const Label = styled.label``;
+const Checkbox = styled.input.attrs({ type: "checkbox" })`
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  display: inline-block;
+  margin-right: 8px;
+  margin-top: 3px;
+  width: 12px;
+  height: 12.25px;
+  border: 1.5px solid #fff;
+  border-radius: 2px;
+  background-color: transparent;
+
+  &:checked {
+    background-color: var(--pishure-light-red);
+    border-color: var(--pishure-light-red);
+  }
+`;
+
+const Input = styled(OutlinedButton)`
+  color: #bec0ce;
+  padding: 0 1rem;
+  height: 40px;
+  max-width: 163px;
+
+  &::placeholder {
+    color: inherit;
+  }
+`;
+
+const Label = styled.label`
+  display: block;
+  margin-bottom: 10px;
+`;
 
 const MainContent = styled.div`
   border-top: 1px solid #1c2141;
   border-left: 1px solid #1c2141;
-  flex-grow: 1;
+  padding: 3rem 0 0 1.5rem;
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
 `;
 
 const Headline2 = styled.h3`
   font-size: var(--font-5);
   margin-top: 3rem;
+`;
+
+const Headline = styled.h1`
+  font-size: var(--font-1);
+  line-height: 1.3;
+  margin-bottom: 8px;
+`;
+
+const BodyText = styled.p`
+  line-height: 1.5;
+  font-size: var(--font-5);
+  margin-bottom: 3.5rem;
 `;
 
 export default SearchResults;
