@@ -8,6 +8,7 @@ import Logo from "../../components/Logo";
 import { NavSideContent } from "../Home";
 import camera from "../../assets/icon-camera.svg";
 import TabContainer from "./TabContainer";
+import ImageGrid from "../../components/ImageGrid";
 
 const tabs = [
   "Lifestyle",
@@ -69,6 +70,7 @@ const SearchResults = () => {
             100+ portrait photos, available to download for free.
           </BodyText>
           <TabContainer style={{ marginBottom: "2rem" }} items={tabs} />
+          <ImageGrid />
         </MainContent>
       </Container>
     </Wrapper>
