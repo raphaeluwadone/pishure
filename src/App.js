@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { GlobalStyles } from "./GlobalStyles";
 import { PrivateRoute } from "./components/PrivateRoute";
 
@@ -14,17 +9,13 @@ import {
   SetPassword,
   MailSent,
 } from "./pages/Authentication";
-import { useUserContext } from "./context/UserContext";
-
 import Home from "./pages/Home";
 import Upload from "./pages/Upload";
 import SearchResults from "./pages/Search/SearchResults";
 
 function App() {
-  const { user } = useUserContext();
-
   return (
-    <Router>
+    <>
       <GlobalStyles />
       <Switch>
         <Route exact path='/'>
@@ -34,13 +25,6 @@ function App() {
         <Route path='/signup'>
           <Signup />
         </Route>
-        {/* 
-        <Route
-          path='/login'
-          render={props => {
-            return user ? <Redirect to='/' /> : <Login {...props} />;
-          }}
-        /> */}
 
         <Route path='/login'>
           <Login />
@@ -62,7 +46,7 @@ function App() {
           <SearchResults />
         </Route>
 
-        <PrivateRoute user={user} path='/upload'>
+        <PrivateRoute path='/upload'>
           <Upload />
         </PrivateRoute>
 
@@ -70,7 +54,7 @@ function App() {
           <h2>(404) Page not found</h2>
         </Route>
       </Switch>
-    </Router>
+    </>
   );
 }
 
