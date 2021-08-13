@@ -50,6 +50,10 @@ const Heading = styled.h1`
 	margin-bottom: 1rem;
 	margin-top: 12.5rem;
 	line-height: 1.3;
+
+	@media (max-width: 470px) {
+		font-size: var(--font-3);
+	}
 `;
 
 const Pad = styled.div`
@@ -61,6 +65,10 @@ const Body = styled.p`
 	font-size: var(--font-5);
 	line-height: 1.5;
 	color: var(--grey-10);
+
+	@media (max-width: 470px) {
+		font-size: var(--font-6);
+	}
 `;
 
 const Span = styled.span`

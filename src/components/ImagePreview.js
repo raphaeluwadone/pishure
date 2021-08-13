@@ -38,6 +38,10 @@ const Grid = styled.div`
 	display: inline-grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 1.5rem;
+
+	@media (max-width: 830px) {
+		display: none;
+	}
 `;
 
 const Col = styled.div`

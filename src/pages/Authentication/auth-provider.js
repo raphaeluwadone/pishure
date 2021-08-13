@@ -28,4 +28,4 @@ function logout() {
 	window.localStorage.reoveItem(localStorageKey);
 }
 
-export { getToken, login, signup, logout };
+export { getToken, login, signup, logout, getUser };

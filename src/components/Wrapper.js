@@ -9,8 +9,8 @@ export const Wrapper = styled.div`
 		padding: 0 2rem;
 	}
 
-	@media (max-width: 400px) {
-		padding: 0 1.5rem;
+	@media (max-width: 470px) {
+		padding: 0 1.2rem;
 	}
 `;
 
