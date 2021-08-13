@@ -4,13 +4,15 @@ import logoSrc from "../assets/logo.svg";
 import styled from "styled-components";
 
 const Logo = () => {
-  return (
-    <Link to='/'>
-      <LogoImage src={logoSrc} />
-    </Link>
-  );
+	return (
+		<Link to='/'>
+			<LogoImage src={logoSrc} />
+		</Link>
+	);
 };
 
-const LogoImage = styled.img``;
+const LogoImage = styled.img`
+	@media;
+`;
 
 export default Logo;

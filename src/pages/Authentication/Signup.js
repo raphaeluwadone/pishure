@@ -74,7 +74,7 @@ const Signup = () => {
 			<Header>
 				<Logo />
 				<WrapperInner>
-					Already have an account
+					<HeaderText>Already have an account</HeaderText>
 					<StyledButtonLink
 						style={{ marginLeft: "2rem" }}
 						to='/login'
@@ -169,6 +169,12 @@ const Signup = () => {
 
 const Submit = styled(PrimaryButton)`
 	margin-bottom: 1.5rem;
+`;
+
+const HeaderText = styled.p`
+	@media (max-width: 470px) {
+		display: none;
+	}
 `;
 
 export default Signup;

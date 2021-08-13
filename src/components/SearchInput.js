@@ -49,8 +49,9 @@ const SearchImageButton = styled.button`
 
 const SearchButton = styled.button`
 	width: 4.625rem;
-	display: grid;
-	place-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	border-radius: 0 var(--radius) var(--radius) 0;
 	background: var(--pishure-red);
 `;
