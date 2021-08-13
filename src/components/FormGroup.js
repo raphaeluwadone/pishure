@@ -10,7 +10,6 @@ const FormGroup = ({
 	children,
 	error,
 }) => {
-	console.log(`${name} error `, error);
 	return (
 		<Wrapper mgR={mgR ? mgR : null}>
 			<InputBox error={error}>

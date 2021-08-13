@@ -1,11 +1,13 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
+import { Redirect } from "react-router";
 
 import Header from "../../components/Header/Header";
 import ImagePreview, {
 	ImagePreviewDetails,
 	ImagePreviewWrap,
 } from "../../components/ImagePreview";
+
 import { Wrapper, Container } from "../../components/Wrapper";
 import FormGroup from "../../components/FormGroup";
 import Logo from "../../components/Logo";
@@ -28,19 +30,43 @@ import {
 	Form,
 	FormRow,
 	FormText,
+	MessageText,
 } from "./AuthStyles";
 
 import twitter from "../../assets/icon-twitter.svg";
 import fb from "../../assets/icon-fb.svg";
 import { useFormValidation } from "../../hooks/useFormValidation";
-import useRedirectUser from "../../hooks/useRedirectUser";
+import { useAuth } from "../../context/AuthContext";
+
+import * as auth from "./auth-provider";
 
 const Signup = () => {
 	const { register, handleSubmit, errors } = useFormValidation();
-	useRedirectUser();
+	const [message, setMessage] = React.useState("");
+	const { user } = useAuth();
 
-	const signUp = d => {
-		console.log(JSON.stringify(d));
+	if (user) return <Redirect to='/' />;
+
+	const signUp = async data => {
+		setMessage("");
+
+		const newData = {
+			...data,
+			firstName: data.firstName.toLowerCase(),
+			lastName: data.lastName.toLowerCase(),
+		};
+
+		try {
+			const resp = await auth.signup(newData);
+			console.log(resp);
+			// if (resp.type === "error") {
+			// 	setMessage(resp.message);
+			// } else if (resp.type === "success") {
+			// 	<Redirect to='/login' />;
+			// }
+		} catch (err) {
+			console.log(err);
+		}
 	};
 
 	return (
@@ -81,6 +107,7 @@ const Signup = () => {
 					<Or>
 						<OrInner>OR</OrInner>
 					</Or>
+					{message ? <MessageText>{message}</MessageText> : null}
 					<Form onSubmit={handleSubmit(signUp)}>
 						<FormRow grid>
 							<FormGroup

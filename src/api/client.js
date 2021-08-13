@@ -19,7 +19,7 @@ const client = (
 		...customConfig,
 	};
 
-	return axios({ config });
+	return axios(config);
 };
 
 export { client };

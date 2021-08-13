@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { Wrapper, Container } from "../components/Wrapper";
 import ImagePreview, { ImagePreviewDetails } from "../components/ImagePreview";
 import { SearchInput } from "../components/SearchInput";

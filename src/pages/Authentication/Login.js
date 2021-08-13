@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Redirect } from "react-router";
 import Header from "../../components/Header/Header";
 import ImagePreview, {
 	ImagePreviewDetails,
@@ -30,13 +31,17 @@ import {
 import { useFormValidation } from "../../hooks/useFormValidation";
 import twitter from "../../assets/icon-twitter.svg";
 import fb from "../../assets/icon-fb.svg";
-import useRedirectUser from "../../hooks/useRedirectUser";
+import { useAuth } from "../../context/AuthContext";
 
 const Signin = () => {
 	const { register, handleSubmit, errors } = useFormValidation();
-	useRedirectUser();
 
-	const submitHandler = d => {
+	const [error, setError] = React.useState("");
+	const { user } = useAuth();
+
+	if (user) return <Redirect to='/' />;
+
+	const Login = d => {
 		alert(JSON.stringify(d));
 	};
 
@@ -78,7 +83,7 @@ const Signin = () => {
 					<Or>
 						<OrInner>OR</OrInner>
 					</Or>
-					<Form onSubmit={handleSubmit(submitHandler)}>
+					<Form onSubmit={handleSubmit(Login)}>
 						<FormRow>
 							<FormGroup
 								type='email'

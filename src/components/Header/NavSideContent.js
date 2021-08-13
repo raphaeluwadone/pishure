@@ -6,6 +6,7 @@ import more from "../../assets/more.svg";
 import { useAuth } from "../../context/AuthContext";
 import Avatar from "../Avatar";
 import { PrimaryButton } from "../Button";
+import notify from "../../assets/notify.svg";
 
 const NavSideContent = () => {
 	const { user } = useAuth();
@@ -21,7 +22,7 @@ const NavSideContent = () => {
 			>
 				Submit a photo
 			</PrimaryButton>
-			<NotifyIcon />
+			<NotifyIcon src={notify} />
 			<Avatar />
 		</InnerWrapper>
 	);
