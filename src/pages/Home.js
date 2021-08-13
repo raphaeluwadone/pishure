@@ -31,10 +31,11 @@ const Home = () => {
 					<SearchExample>
 						<Span>Try:</Span>danfo, street, traffic, lagos life,
 					</SearchExample>
+					<ImagePreviewDetails />
 				</Col>
 				<ImagePreview />
 			</Container>
-			<ImagePreviewDetails />
+
 			<Pad />
 			<ImageGrid />
 		</Wrapper>
@@ -43,12 +44,20 @@ const Home = () => {
 
 const Col = styled.div`
 	max-width: 33.75rem;
+
+	@media (max-width: 1337px) {
+		margin-right: 1.5rem;
+	}
+
+	@media (max-width: 470px) {
+		margin-right: 0;
+	}
 `;
 
 const Heading = styled.h1`
 	font-size: var(--font-1);
 	margin-bottom: 1rem;
-	margin-top: 12.5rem;
+	margin-top: 9.25rem;
 	line-height: 1.3;
 
 	@media (max-width: 470px) {
@@ -79,6 +88,11 @@ const Span = styled.span`
 const SearchExample = styled.p`
 	font-size: 1rem;
 	color: var(--grey-10);
+	margin-bottom: 17.75rem;
+
+	@media (max-width: 830px) {
+		margin-bottom: 0;
+	}
 `;
 
 export default Home;
