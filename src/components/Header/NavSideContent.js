@@ -70,7 +70,9 @@ const Bar = styled.div`
 
 const NotifyIcon = styled.img``;
 
-const More = styled.img``;
+const More = styled.img`
+	@media (max-width: 47);
+`;
 
 const InnerWrapper = styled.div`
 	display: flex;

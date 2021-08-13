@@ -63,6 +63,10 @@ const Heading = styled.h1`
 	@media (max-width: 470px) {
 		font-size: var(--font-3);
 	}
+
+	@media (max-width: 740px) {
+		margin-top: 3rem;
+	}
 `;
 
 const Pad = styled.div`

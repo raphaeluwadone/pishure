@@ -74,7 +74,7 @@ const Signup = () => {
 			<Header>
 				<Logo />
 				<WrapperInner>
-					<HeaderText>Already have an account</HeaderText>
+					<HeaderText>Already have an account?</HeaderText>
 					<StyledButtonLink
 						style={{ marginLeft: "2rem" }}
 						to='/login'

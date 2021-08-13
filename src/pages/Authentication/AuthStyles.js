@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const WrapperInner = styled.div``;
+export const WrapperInner = styled.div`
+	display: flex;
+	align-items: center;
+`;
 
 export const FormWrapper = styled.div`
 	max-width: 28.125rem;
