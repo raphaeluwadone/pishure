@@ -7,12 +7,15 @@ export const GlobalStyles = createGlobalStyle`
     --black-900: #060813;
     --black-700: #12141D;
     --white: #fff;
-    --radius: 0.3125rem;
     --grey-10: #E9EAEF;
+    --grey-300: #bec0ce;
+    --blue: #3d416c;
     --twitter-blue: #1DA1F2;
     --pishure-red: #E21F3B;
     --pishure-light-red: #F3A4AF;
-    --border-color: #3D416C;
+
+    --border-blue: 1px solid var(--blue);
+    --radius: 0.3125rem;
 
     --font-1: 3rem;
     --font-2: 2.25rem;
@@ -47,6 +50,7 @@ export const GlobalStyles = createGlobalStyle`
   button{
     border: none;
     outline: none;
+    background: none;
     box-shadow: none;
   }
 

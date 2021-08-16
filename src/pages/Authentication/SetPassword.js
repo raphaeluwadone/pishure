@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Wrapper, Container } from "../../components/Wrapper";
+import { Wrapper, Flex } from "../../components/Container/Wrapper";
 import Header from "../../components/Header/Header";
 import ImagePreview, {
 	ImagePreviewDetails,
 	ImagePreviewWrap,
 } from "../../components/ImagePreview";
-import FormGroup from "../../components/FormGroup";
-import { PrimaryButton } from "../../components/Button";
-import Logo from "../../components/Logo";
-import { StyledButtonLink } from "../../components/Links";
+import FormGroup from "../../components/FormGroup/FormGroup";
+import { PrimaryButton } from "../../components/Button/Button";
+import Logo from "../../components/Logo/Logo";
+import { StyledButtonLink } from "../../components/Link/Links";
 import { useFormValidation } from "../../hooks/useFormValidation";
 import {
 	WrapperInner,
@@ -41,7 +41,7 @@ const SetPassword = () => {
 					</StyledButtonLink>
 				</WrapperInner>
 			</Header>
-			<Container>
+			<Flex>
 				<ImagePreviewWrap>
 					<ImagePreview />
 					<ImagePreviewDetails />
@@ -71,7 +71,7 @@ const SetPassword = () => {
 						</PrimaryButton>
 					</Form>
 				</FormWrapper>
-			</Container>
+			</Flex>
 		</Wrapper>
 	);
 };

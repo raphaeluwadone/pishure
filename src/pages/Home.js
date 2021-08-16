@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { Wrapper, Container } from "../components/Wrapper";
+import { Wrapper, Flex } from "../components/Container/Wrapper";
 import ImagePreview, { ImagePreviewDetails } from "../components/ImagePreview";
-import { SearchInput } from "../components/SearchInput";
-import ImageGrid from "../components/ImageGrid";
+import { SearchInput } from "../components/SearchInput/SearchInput";
+import ImageGrid from "../components/ImageGrid/ImageGrid";
 import Header from "../components/Header/Header";
-import Logo from "../components/Logo";
+import Logo from "../components/Logo/Logo";
 import NavSideContent from "../components/Header/NavSideContent";
 
 const Home = () => {
@@ -15,12 +15,7 @@ const Home = () => {
 				<Logo />
 				<NavSideContent />
 			</Header>
-			<Container
-				style={{
-					marginTop: "8.25rem",
-					paddingBottom: "0",
-				}}
-			>
+			<Container>
 				<Col>
 					<Heading>Best Collection of Nigerian Stock Photos.</Heading>
 					<Body>
@@ -41,6 +36,15 @@ const Home = () => {
 		</Wrapper>
 	);
 };
+
+const Container = styled(Flex)`
+	margin-top: 8.25rem;
+	padding-bottom: 0;
+
+	@media (max-width: 830px) {
+		justify-content: flex-start;
+	}
+`;
 
 const Col = styled.div`
 	max-width: 33.75rem;

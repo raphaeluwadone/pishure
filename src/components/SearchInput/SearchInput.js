@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import camera from "../assets/icon-camera.svg";
 import search from "../assets/icon-search.svg";
-import { InputBox, InputField } from "./FormGroup";
+import { InputBox, InputField } from "../FormGroup/FormGroup";
 
 export const SearchInput = () => {
 	const SearchImage = (
@@ -12,15 +12,7 @@ export const SearchInput = () => {
 
 	return (
 		<SearchWrapper>
-			<InputBox
-				style={{
-					height: "4.5rem",
-					paddingLeft: "1.5rem",
-					paddingRight: "1.5rem",
-					borderTopRightRadius: "0",
-					borderBottomRightRadius: "0",
-				}}
-			>
+			<SearchInputBox>
 				<InputField
 					style={{
 						paddingRight: ".7rem",
@@ -28,7 +20,7 @@ export const SearchInput = () => {
 					placeholder='Search high quality photos for free!...'
 				/>
 				{SearchImage}
-			</InputBox>
+			</SearchInputBox>
 			<SearchButton>
 				<IconImage src={search} />
 			</SearchButton>
@@ -39,6 +31,20 @@ export const SearchInput = () => {
 const SearchWrapper = styled.form`
 	display: flex;
 	margin-bottom: 1rem;
+`;
+
+const SearchInputBox = styled(InputBox)`
+	height: 4.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	border-top-right-adius: 0;
+	border-bottom-right-radius: 0;
+
+	@media (max-width: 540px) {
+		height: 3rem;
+		padding-left: 0.7rem;
+		padding-right: 0.7rem;
+	}
 `;
 
 const IconImage = styled.img``;

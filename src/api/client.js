@@ -8,7 +8,7 @@ const client = (
 ) => {
 	const config = {
 		url: `${url}/${endpoint}`,
-		method: data ? "post" : "get",
+		method: "get",
 		data: data ? data : undefined,
 		headers: {
 			Authorization: token ? `Bearer ${token}` : undefined,

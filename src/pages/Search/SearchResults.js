@@ -7,7 +7,7 @@ import Header from "../../components/Header/Header";
 import Logo from "../../components/Logo";
 import NavSideContent from "../../components/Header/NavSideContent";
 import camera from "../../assets/icon-camera.svg";
-import TabContainer from "./TabContainer";
+import TagGroup from "./TagGroup";
 import ImageGrid from "../../components/ImageGrid";
 
 const tabs = [
@@ -73,10 +73,7 @@ const SearchResults = () => {
 					<BodyText>
 						100+ portrait photos, available to download for free.
 					</BodyText>
-					<TabContainer
-						style={{ marginBottom: "2rem" }}
-						items={tabs}
-					/>
+					<TagGroup style={{ marginBottom: "2rem" }} items={tabs} />
 					<ImageGrid />
 				</MainContent>
 			</Container>

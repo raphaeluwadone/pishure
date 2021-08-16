@@ -1,5 +1,4 @@
 import React from "react";
-
 import styled from "styled-components";
 
 const Header = ({ children, ...restProps }) => {
@@ -17,6 +16,12 @@ const Nav = styled.nav`
 	left: 0;
 	width: 100%;
 	background-color: var(--black-900);
+`;
+
+export const HeaderText = styled.p`
+	@media (max-width: 470px) {
+		display: none;
+	}
 `;
 
 const Container = styled.div`

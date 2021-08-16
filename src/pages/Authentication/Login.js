@@ -1,20 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import { Redirect } from "react-router";
-import Header from "../../components/Header/Header";
+import Header, { HeaderText } from "../../components/Header/Header";
+
 import ImagePreview, {
 	ImagePreviewDetails,
 	ImagePreviewWrap,
 } from "../../components/ImagePreview";
-import { Wrapper, Container } from "../../components/Wrapper";
-import FormGroup from "../../components/FormGroup";
-import Logo from "../../components/Logo";
+
+import { Wrapper, Flex } from "../../components/Container/Wrapper";
+import FormGroup from "../../components/FormGroup/FormGroup";
+import Logo from "../../components/Logo/Logo";
+
 import {
 	TwitterButton,
 	FbButton,
 	PrimaryButton,
-} from "../../components/Button";
-import { StyledButtonLink, StyledLink } from "../../components/Links";
+} from "../../components/Button/Button";
+
+import { StyledButtonLink, StyledLink } from "../../components/Link/Links";
+
 import {
 	WrapperInner,
 	FormWrapper,
@@ -50,7 +55,7 @@ const Signin = () => {
 			<Header>
 				<Logo />
 				<WrapperInner>
-					New to Pishure?
+					<HeaderText>New to Pishure?</HeaderText>
 					<StyledButtonLink
 						style={{ marginLeft: "2rem" }}
 						to='/signup'
@@ -59,7 +64,7 @@ const Signin = () => {
 					</StyledButtonLink>
 				</WrapperInner>
 			</Header>
-			<Container>
+			<Flex>
 				<ImagePreviewWrap>
 					<ImagePreview />
 					<ImagePreviewDetails />
@@ -116,7 +121,7 @@ const Signin = () => {
 						</PrimaryButton>
 					</Form>
 				</FormWrapper>
-			</Container>
+			</Flex>
 		</Wrapper>
 	);
 };

@@ -1,39 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { StyledButtonLink, StyledLink } from "../Links";
+import { StyledButtonLink, StyledLink } from "../Link/Links";
 import more from "../../assets/more.svg";
 import { useAuth } from "../../context/AuthContext";
 import Avatar from "../Avatar";
-import { PrimaryButton } from "../Button";
+import Button from "../Button";
 import notify from "../../assets/notify.svg";
 
 const NavSideContent = () => {
 	const { user } = useAuth();
 	// let user = {};
+
 	const authInnerNavContent = (
 		<InnerWrapper>
-			<PrimaryButton
-				style={{
-					marginRight: "2rem",
-				}}
-				to='/upload'
-				as={Link}
-			>
+			<Button theme='primary' to='/upload' as={Link}>
 				Submit a photo
-			</PrimaryButton>
+			</Button>
 			<NotifyIcon src={notify} />
 			<Avatar />
 		</InnerWrapper>
 	);
+
 	const navSideContent = (
 		<NavRight>
 			<More src={more} />
-			<p>Explore</p>
+			<Text>Explore</Text>
 			{user ? (
 				authInnerNavContent
 			) : (
-				<>
+				<UnAuthenticatedInner>
 					<StyledButtonLink
 						to='/upload'
 						style={{ borderColor: "var(--white)" }}
@@ -42,10 +38,10 @@ const NavSideContent = () => {
 					</StyledButtonLink>
 					<Bar />
 					<StyledLink to='/login'>Login</StyledLink>
-					<PrimaryButton to='/signup' as={Link}>
+					<Button theme='primary' to='/signup' as={Link}>
 						Signup
-					</PrimaryButton>
-				</>
+					</Button>
+				</UnAuthenticatedInner>
 			)}
 		</NavRight>
 	);
@@ -53,11 +49,9 @@ const NavSideContent = () => {
 	return navSideContent;
 };
 
-const NavRight = styled.div`
-	display: flex;
-	align-items: center;
-	& > *:not(:last-child) {
-		margin-right: 2rem;
+const Text = styled.p`
+	@media (max-width: 723px) {
+		display: none;
 	}
 `;
 
@@ -71,12 +65,29 @@ const Bar = styled.div`
 const NotifyIcon = styled.img``;
 
 const More = styled.img`
-	@media (max-width: 47);
+	@media (max-width: 723px) {
+		display: none;
+	}
 `;
 
-const InnerWrapper = styled.div`
+const NavRight = styled.div`
+	display: flex;
+	align-items: center;
+
+	& > *:not(:last-child) {
+		margin-right: 2rem;
+	}
+`;
+
+const UnAuthenticatedInner = styled(NavRight)`
+	@media (max-width: 723px) {
+		display: none;
+	}
+`;
+
+const InnerWrapper = styled(NavRight)`
 	display: flex;
 	align-items: center;
 `;
 
-export default NavSideContent;
+export { NavSideContent };

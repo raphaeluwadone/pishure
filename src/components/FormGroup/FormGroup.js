@@ -11,7 +11,7 @@ const FormGroup = ({
 	error,
 }) => {
 	return (
-		<Wrapper mgR={mgR ? mgR : null}>
+		<Container mgR={mgR ? mgR : null}>
 			<InputBox error={error}>
 				<InputField
 					type={type}
@@ -21,7 +21,7 @@ const FormGroup = ({
 				{children ? <Icon>{children}</Icon> : null}
 			</InputBox>
 			{error && <ErrorText>{error.message}</ErrorText>}
-		</Wrapper>
+		</Container>
 	);
 };
 
@@ -32,7 +32,7 @@ export const InputBox = styled.div`
 	display: flex;
 	align-items: center;
 	background: #12141d;
-	border: 1px solid #3d416c;
+	border: var(--border-blue);
 	border-radius: var(--radius);
 	${props =>
 		props.error &&
@@ -42,14 +42,12 @@ export const InputBox = styled.div`
 `;
 
 export const InputField = styled.input`
-	background: none;
-	border: none;
 	font-size: 1rem;
 	width: 100%;
-	color: #bec0ce;
+	color: var(--grey-300);
 
 	&::placeholder {
-		color: #bec0ce;
+		color: inherit;
 	}
 `;
 
@@ -63,7 +61,7 @@ const ErrorText = styled.p`
 	font-weight: 300;
 `;
 
-const Wrapper = styled.div`
+const Container = styled.div`
 	width: 100%;
 
 	${props =>

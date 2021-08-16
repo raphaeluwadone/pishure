@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Wrapper, Container } from "../../components/Wrapper";
+import { Wrapper, Flex } from "../../components/Container/Wrapper";
 import Header from "../../components/Header/Header";
 import ImagePreview, {
 	ImagePreviewDetails,
 	ImagePreviewWrap,
 } from "../../components/ImagePreview";
-import Logo from "../../components/Logo";
-import { StyledButtonLink } from "../../components/Links";
+import Logo from "../../components/Logo/Logo";
+import { StyledButtonLink } from "../../components/Link/Links";
 
 import { WrapperInner } from "./AuthStyles";
 
@@ -29,7 +29,7 @@ const MailSent = () => {
 					</StyledButtonLink>
 				</WrapperInner>
 			</Header>
-			<Container>
+			<Flex>
 				<ImagePreviewWrap>
 					<ImagePreview />
 					<ImagePreviewDetails />
@@ -43,7 +43,7 @@ const MailSent = () => {
 						your password.
 					</BodyText>
 				</Content>
-			</Container>
+			</Flex>
 		</Wrapper>
 	);
 };

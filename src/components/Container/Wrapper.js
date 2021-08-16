@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
 	}
 `;
 
-export const Container = styled.div`
+export const Flex = styled.div`
 	display: flex;
 	max-width: 73rem;
 	justify-content: space-between;
