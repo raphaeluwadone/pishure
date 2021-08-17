@@ -2,24 +2,20 @@ import React from "react";
 import styled from "styled-components";
 
 import { Wrapper, Flex } from "../../components/Container/Wrapper";
-import Header from "../../components/Header/Header";
+import Header, {
+	HeaderText,
+	HeaderInner,
+} from "../../components/Header/Header";
 import ImagePreview, {
 	ImagePreviewDetails,
 	ImagePreviewWrap,
 } from "../../components/ImagePreview";
 import FormGroup from "../../components/FormGroup/FormGroup";
-import { PrimaryButton } from "../../components/Button/Button";
 import Logo from "../../components/Logo/Logo";
-import { StyledButtonLink } from "../../components/Link/Links";
+import Button from "../../components/Button";
 import { useFormValidation } from "../../hooks/useFormValidation";
-import {
-	WrapperInner,
-	FormWrapper,
-	Headline,
-	BodyText,
-	Form,
-	FormRow,
-} from "./AuthStyles";
+import { FormWrapper, Headline, BodyText, Form, FormRow } from "./AuthStyles";
+import { Link } from "react-router-dom";
 
 const SetPassword = () => {
 	const { register, handleSubmit } = useFormValidation();
@@ -31,15 +27,17 @@ const SetPassword = () => {
 		<Wrapper>
 			<Header>
 				<Logo />
-				<WrapperInner>
-					New to Pishure?
-					<StyledButtonLink
+				<HeaderInner>
+					<HeaderText>New to Pishure?</HeaderText>
+					<Button
+						theme='outlined'
+						as={Link}
 						style={{ marginLeft: "2rem" }}
 						to='/signup'
 					>
 						Sign up
-					</StyledButtonLink>
-				</WrapperInner>
+					</Button>
+				</HeaderInner>
 			</Header>
 			<Flex>
 				<ImagePreviewWrap>
@@ -55,7 +53,7 @@ const SetPassword = () => {
 					</SetPasswordText>
 
 					<Form onSubmit={handleSubmit(submitHandler)}>
-						<FormRow>
+						<FormRow mb='2.5rem'>
 							<FormGroup
 								name='password'
 								register={register}
@@ -63,12 +61,15 @@ const SetPassword = () => {
 								label='Password'
 							/>
 						</FormRow>
-						<PrimaryButton
-							style={{ width: "100%", height: "3.5rem" }}
+						<Button
+							theme='primary'
+							width='100%'
+							fontSize='1rem'
+							height='3.5rem'
 							type='submit'
 						>
-							Set password
-						</PrimaryButton>
+							Submit
+						</Button>
 					</Form>
 				</FormWrapper>
 			</Flex>

@@ -6,7 +6,7 @@ import { SearchInput } from "../components/SearchInput/SearchInput";
 import ImageGrid from "../components/ImageGrid/ImageGrid";
 import Header from "../components/Header/Header";
 import Logo from "../components/Logo/Logo";
-import NavSideContent from "../components/Header/NavSideContent";
+import { NavSideContent } from "../components/Header";
 
 const Home = () => {
 	return (
@@ -68,7 +68,7 @@ const Heading = styled.h1`
 		font-size: var(--font-3);
 	}
 
-	@media (max-width: 740px) {
+	@media (max-width: 768px) {
 		margin-top: 3rem;
 	}
 `;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { StyledTextLink } from "./Links";
+import { StyledTextLink } from "../Link";
 
 const ImagePreview = () => {
 	return (

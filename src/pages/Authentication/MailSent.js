@@ -2,32 +2,36 @@ import React from "react";
 import styled from "styled-components";
 
 import { Wrapper, Flex } from "../../components/Container/Wrapper";
-import Header from "../../components/Header/Header";
+import Header, {
+	HeaderText,
+	HeaderInner,
+} from "../../components/Header/Header";
 import ImagePreview, {
 	ImagePreviewDetails,
 	ImagePreviewWrap,
 } from "../../components/ImagePreview";
 import Logo from "../../components/Logo/Logo";
-import { StyledButtonLink } from "../../components/Link/Links";
+import Button from "../../components/Button";
 
-import { WrapperInner } from "./AuthStyles";
-
-import mailIcon from "../../assets/icon-mail.svg";
+import Icon from "../../components/Icon/Icon";
+import { Link } from "react-router-dom";
 
 const MailSent = () => {
 	return (
 		<Wrapper>
 			<Header>
 				<Logo />
-				<WrapperInner>
-					New to Pishure?
-					<StyledButtonLink
+				<HeaderInner>
+					<HeaderText>New to Pishure?</HeaderText>
+					<Button
+						theme='outlined'
+						as={Link}
 						style={{ marginLeft: "2rem" }}
 						to='/signup'
 					>
 						Sign up
-					</StyledButtonLink>
-				</WrapperInner>
+					</Button>
+				</HeaderInner>
 			</Header>
 			<Flex>
 				<ImagePreviewWrap>
@@ -36,7 +40,7 @@ const MailSent = () => {
 				</ImagePreviewWrap>
 
 				<Content>
-					<MailIcon src={mailIcon} />
+					<MailIcon type='mail' />
 					<Headline>We’ve sent you a mail.</Headline>
 					<BodyText>
 						Please check your email and click on the link to reset
@@ -57,7 +61,7 @@ const Content = styled.div`
 	text-align: center;
 `;
 
-const MailIcon = styled.img`
+const MailIcon = styled(Icon)`
 	margin-bottom: 3.1875rem;
 `;
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { StyledButtonLink, StyledLink } from "../Link/Links";
+import { StyledLink } from "../Link/Links";
 import more from "../../assets/more.svg";
 import { useAuth } from "../../context/AuthContext";
 import Avatar from "../Avatar";
@@ -30,12 +30,14 @@ const NavSideContent = () => {
 				authInnerNavContent
 			) : (
 				<UnAuthenticatedInner>
-					<StyledButtonLink
+					<Button
+						as={Link}
+						theme='outlined'
 						to='/upload'
-						style={{ borderColor: "var(--white)" }}
+						border='var(--white)'
 					>
 						Submit a photo
-					</StyledButtonLink>
+					</Button>
 					<Bar />
 					<StyledLink to='/login'>Login</StyledLink>
 					<Button theme='primary' to='/signup' as={Link}>

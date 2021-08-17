@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
 
 import Header from "../../components/Header/Header";
 import Logo from "../../components/Logo";
-import { Wrapper } from "../../components/Wrapper";
-import BottomNav from "../../components/BottomNav";
+import { Wrapper } from "../../components/Container/Wrapper";
+import BottomNav from "../../components/ButtonGroup";
 import SelectImage from "./SelectImage";
 import UploadImageForm from "./UploadImageForm";
+import { HeaderText } from "../../components/Header";
 
 const Upload = () => {
 	const [file, setFile] = useState(null);
@@ -60,7 +61,7 @@ const Upload = () => {
 	);
 };
 
-const Title = styled.h1`
+const Title = styled(HeaderText)`
 	font-weight: 500;
 	font-size: 1.25rem;
 `;

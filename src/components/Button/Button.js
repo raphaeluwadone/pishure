@@ -31,13 +31,13 @@ const BaseButton = styled.button.attrs(props => ({
 	width: props.width || "initial",
 	height: props.height || "initial",
 }))`
-    padding: 0.7rem 1.7rem;
-    width: ${props => props.width || "initial"};
-    height: ${props => props.height || "initial"}
-    border-radius: var(--radius);
-    color: var(--white);
-    line-height: 1.5;
-    font-size: ${props => props.fontSize};
+	padding: 0.7rem 1.7rem;
+	width: ${props => props.width || "initial"};
+	height: ${props => props.height || "initial"};
+	border-radius: var(--radius);
+	color: var(--white);
+	line-height: 1.5;
+	font-size: ${props => props.fontSize};
 `;
 
 const PrimaryButton = styled(BaseButton)`
@@ -60,6 +60,7 @@ const SecondaryButton = styled(BaseButton)`
 const OutlinedButton = styled(BaseButton)`
 	background: var(--black-700);
 	border: var(--border-blue);
+	border-color: ${props => props.border};
 `;
 
 const TwitterButton = styled(BaseButton)`

@@ -1,12 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import arrowDown from "../assets/chevron-down.svg";
+import Icon from "../Icon/Icon";
 
 const Avatar = () => {
 	return (
 		<>
 			<AvatarImage />
-			<CaretDown src={arrowDown} />
+			<Icon
+				type='chevron'
+				width='8px'
+				height='10px'
+				style={{ transform: "rotate(90deg)" }}
+			/>
 		</>
 	);
 };
@@ -18,13 +23,6 @@ const AvatarImage = styled.img`
 	object-fit: cover;
 	background-color: var(--white);
 	margin-right: 0.6rem;
-`;
-
-const CaretDown = styled.img`
-	transform: rotate(90deg);
-	width: 8px;
-	height: 10px;
-	object-fit: cover;
 `;
 
 export default Avatar;

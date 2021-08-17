@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import camera from "../assets/icon-camera.svg";
-import search from "../assets/icon-search.svg";
+import Icon from "../Icon/Icon";
 import { InputBox, InputField } from "../FormGroup/FormGroup";
 
 export const SearchInput = () => {
 	const SearchImage = (
 		<SearchImageButton>
-			<IconImage src={camera} />
+			<Icon type='camera' />
 		</SearchImageButton>
 	);
 
@@ -22,7 +21,7 @@ export const SearchInput = () => {
 				{SearchImage}
 			</SearchInputBox>
 			<SearchButton>
-				<IconImage src={search} />
+				<Icon type='search' />
 			</SearchButton>
 		</SearchWrapper>
 	);

@@ -1,8 +1,10 @@
 import React from "react";
-import styled from "styled-components/macro";
 import { Redirect } from "react-router";
 
-import Header, { HeaderText } from "../../components/Header/Header";
+import Header, {
+	HeaderText,
+	HeaderInner,
+} from "../../components/Header/Header";
 import ImagePreview, {
 	ImagePreviewDetails,
 	ImagePreviewWrap,
@@ -11,20 +13,13 @@ import ImagePreview, {
 import { Wrapper, Flex } from "../../components/Container/Wrapper";
 import FormGroup from "../../components/FormGroup/FormGroup";
 import Logo from "../../components/Logo/Logo";
+import Button from "../../components/Button/Button";
+import { StyledTextLink } from "../../components/Link/Links";
 import {
-	TwitterButton,
-	FbButton,
-	PrimaryButton,
-} from "../../components/Button/Button";
-import { StyledButtonLink, StyledTextLink } from "../../components/Link/Links";
-import {
-	WrapperInner,
 	FormWrapper,
 	Headline,
 	BodyText,
 	WrapperItem,
-	TwitterIcon,
-	FbIcon,
 	Or,
 	OrInner,
 	Form,
@@ -32,9 +27,11 @@ import {
 	FormText,
 	MessageText,
 } from "./AuthStyles";
+import { Link } from "react-router-dom";
 
-import twitter from "../../assets/icon-twitter.svg";
-import fb from "../../assets/icon-fb.svg";
+import Icon from "../../components/Icon/Icon";
+import Spacer from "../../components/Spacer/Spacer";
+
 import { useFormValidation } from "../../hooks/useFormValidation";
 import { useAuth } from "../../context/AuthContext";
 
@@ -73,15 +70,17 @@ const Signup = () => {
 		<Wrapper>
 			<Header>
 				<Logo />
-				<WrapperInner>
+				<HeaderInner>
 					<HeaderText>Already have an account?</HeaderText>
-					<StyledButtonLink
+					<Button
+						theme='outlined'
+						as={Link}
 						style={{ marginLeft: "2rem" }}
 						to='/login'
 					>
 						Login
-					</StyledButtonLink>
-				</WrapperInner>
+					</Button>
+				</HeaderInner>
 			</Header>
 			<Flex>
 				<ImagePreviewWrap>
@@ -96,19 +95,20 @@ const Signup = () => {
 						creative.
 					</BodyText>
 					<WrapperItem>
-						<TwitterButton>
-							<TwitterIcon src={twitter} />
+						<Button theme='twitter' fontSize='1rem'>
+							<Icon type='twitter' />
+							<Spacer size='1.5rem' />
 							Sign up with Twitter
-						</TwitterButton>
-						<FbButton as='button'>
-							<FbIcon src={fb} />
-						</FbButton>
+						</Button>
+						<Button theme='fb'>
+							<Icon type='fb' />
+						</Button>
 					</WrapperItem>
 					<Or>
 						<OrInner>OR</OrInner>
 					</Or>
 					{message ? <MessageText>{message}</MessageText> : null}
-					<Form onSubmit={handleSubmit(signUp)}>
+					<Form onSubmit={handleSubmit(signUp)} mb='1.5rem'>
 						<FormRow grid>
 							<FormGroup
 								register={register}
@@ -138,7 +138,7 @@ const Signup = () => {
 							/>
 						</FormRow>
 
-						<FormRow className='mg-b'>
+						<FormRow mb='2.5rem'>
 							<FormGroup
 								register={register}
 								type='password'
@@ -149,12 +149,15 @@ const Signup = () => {
 								minlength={8}
 							/>
 						</FormRow>
-						<Submit
-							style={{ width: "100%", height: "3.5rem" }}
+						<Button
+							theme='primary'
+							width='100%'
+							fontSize='1rem'
+							height='3.5rem'
 							type='submit'
 						>
-							Sign Up
-						</Submit>
+							Sign up
+						</Button>
 					</Form>
 					<FormText>
 						By signing up, you agree to our{" "}
@@ -166,9 +169,5 @@ const Signup = () => {
 		</Wrapper>
 	);
 };
-
-const Submit = styled(PrimaryButton)`
-	margin-bottom: 1.5rem;
-`;
 
 export default Signup;

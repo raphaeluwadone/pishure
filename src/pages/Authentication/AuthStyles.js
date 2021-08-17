@@ -35,14 +35,6 @@ export const WrapperItem = styled.div`
 	margin-bottom: 4.1875rem;
 `;
 
-export const TwitterIcon = styled.img`
-	margin-right: 1.5rem;
-`;
-
-export const FbIcon = styled.img`
-	margin-right: 0;
-`;
-
 export const Or = styled.div`
 	position: relative;
 	text-align: center;
@@ -68,15 +60,13 @@ export const OrInner = styled.span`
 	color: #9395ad;
 `;
 
-export const Form = styled.form``;
+export const Form = styled.form`
+	margin-bottom: ${props => props.mb};
+`;
 
 export const FormRow = styled.div`
 	display: flex;
-	margin-bottom: 1.5rem;
-
-	&.mg-b {
-		margin-bottom: 2.5rem;
-	}
+	margin-bottom: ${props => props.mb || "1.5rem"};
 `;
 
 export const FormText = styled.p`

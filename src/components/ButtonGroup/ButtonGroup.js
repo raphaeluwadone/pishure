@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Wrapper } from "../Wrapper";
+import { Wrapper } from "../Container/Wrapper";
 import Button from "../Button";
 
 const ButtonGroup = ({ file }) => {

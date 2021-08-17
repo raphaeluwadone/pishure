@@ -1,47 +1,43 @@
 import React from "react";
 import styled from "styled-components";
 import { Redirect } from "react-router";
-import Header, { HeaderText } from "../../components/Header/Header";
+import Header, { HeaderText, HeaderInner } from "../../components/Header";
 
 import ImagePreview, {
 	ImagePreviewDetails,
 	ImagePreviewWrap,
 } from "../../components/ImagePreview";
+import Icon from "../../components/Icon/Icon";
 
 import { Wrapper, Flex } from "../../components/Container/Wrapper";
 import FormGroup from "../../components/FormGroup/FormGroup";
 import Logo from "../../components/Logo/Logo";
 
-import {
-	TwitterButton,
-	FbButton,
-	PrimaryButton,
-} from "../../components/Button/Button";
+import Button from "../../components/Button/Button";
 
-import { StyledButtonLink, StyledLink } from "../../components/Link/Links";
+import { Link } from "react-router-dom";
+import Spacer from "../../components/Spacer/Spacer";
+
+import { StyledLink } from "../../components/Link/Links";
 
 import {
-	WrapperInner,
 	FormWrapper,
 	Headline,
 	BodyText,
 	WrapperItem,
-	TwitterIcon,
-	FbIcon,
 	Or,
 	OrInner,
 	Form,
 	FormRow,
 } from "./AuthStyles";
 import { useFormValidation } from "../../hooks/useFormValidation";
-import twitter from "../../assets/icon-twitter.svg";
-import fb from "../../assets/icon-fb.svg";
 import { useAuth } from "../../context/AuthContext";
 
 const Signin = () => {
 	const { register, handleSubmit, errors } = useFormValidation();
 
 	const [error, setError] = React.useState("");
+
 	const { user } = useAuth();
 
 	if (user) return <Redirect to='/' />;
@@ -54,15 +50,17 @@ const Signin = () => {
 		<Wrapper>
 			<Header>
 				<Logo />
-				<WrapperInner>
+				<HeaderInner>
 					<HeaderText>New to Pishure?</HeaderText>
-					<StyledButtonLink
+					<Button
+						theme='outlined'
+						as={Link}
 						style={{ marginLeft: "2rem" }}
 						to='/signup'
 					>
 						Sign up
-					</StyledButtonLink>
-				</WrapperInner>
+					</Button>
+				</HeaderInner>
 			</Header>
 			<Flex>
 				<ImagePreviewWrap>
@@ -77,13 +75,14 @@ const Signin = () => {
 						creators all over Nigeria.
 					</BodyText>
 					<WrapperItem>
-						<TwitterButton>
-							<TwitterIcon src={twitter} />
+						<Button theme='twitter' fontSize='1rem'>
+							<Icon type='twitter' />
+							<Spacer size='1.5rem' />
 							Sign up with Twitter
-						</TwitterButton>
-						<FbButton as='button'>
-							<FbIcon src={fb} />
-						</FbButton>
+						</Button>
+						<Button theme='fb'>
+							<Icon type='fb' />
+						</Button>
 					</WrapperItem>
 					<Or>
 						<OrInner>OR</OrInner>
@@ -110,15 +109,19 @@ const Signin = () => {
 								required
 							/>
 						</FormRow>
+
 						<FormLink to='/forgotpassword'>
 							Forgot password?
 						</FormLink>
-						<PrimaryButton
-							style={{ width: "100%", height: "3.5rem" }}
+						<Button
+							theme='primary'
+							width='100%'
+							fontSize='1rem'
+							height='3.5rem'
 							type='submit'
 						>
 							Login
-						</PrimaryButton>
+						</Button>
 					</Form>
 				</FormWrapper>
 			</Flex>

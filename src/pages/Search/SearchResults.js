@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { OutlinedButton } from "../../components/Button";
+import Button from "../../components/Button";
 import { InputField } from "../../components/FormGroup";
-import { Wrapper } from "../../components/Wrapper";
+import { Wrapper } from "../../components/Container/Wrapper";
 import Header from "../../components/Header/Header";
 import Logo from "../../components/Logo";
-import NavSideContent from "../../components/Header/NavSideContent";
+import { NavSideContent } from "../../components/Header";
 import camera from "../../assets/icon-camera.svg";
 import TagGroup from "./TagGroup";
 import ImageGrid from "../../components/ImageGrid";
@@ -65,7 +65,7 @@ const SearchResults = () => {
 						<FilterText style={{ marginBottom: "10px" }}>
 							Color
 						</FilterText>
-						<Input as='input' placeholder='Enter hex or select' />
+						<Input placeholder='Enter hex or select' />
 					</FilterWrapper>
 				</SidebarContent>
 				<MainContent>
@@ -94,7 +94,7 @@ const NavSearchBar = () => {
 				}}
 				placeholder='Search high quality photos for free!...'
 			/>
-			<SearchImageButton>
+			<SearchImageButton theme='outlined'>
 				<Image src={camera} />
 			</SearchImageButton>
 		</SearchForm>
@@ -116,7 +116,7 @@ const Image = styled.img`
 	height: 1rem;
 `;
 
-const SearchImageButton = styled(OutlinedButton)`
+const SearchImageButton = styled(Button)`
 	padding: 0 0.75rem;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
@@ -124,6 +124,7 @@ const SearchImageButton = styled(OutlinedButton)`
 
 const Div = styled.div`
 	display: flex;
+	align-items: center;
 `;
 
 const Container = styled.div`
@@ -165,11 +166,12 @@ const Checkbox = styled.input.attrs({ type: "checkbox" })`
 	}
 `;
 
-const Input = styled(OutlinedButton)`
+const Input = styled(Button)`
 	color: #bec0ce;
 	padding: 0 1rem;
 	height: 40px;
 	max-width: 163px;
+	border: var(--border-blue);
 
 	&::placeholder {
 		color: inherit;
