@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Icon from "../Icon/Icon";
 import { InputBox, InputField } from "../FormGroup/FormGroup";
 
-export const SearchInput = () => {
+export const HeaderSearch = () => {
 	const SearchImage = (
 		<SearchImageButton>
 			<Icon type='camera' />
@@ -20,9 +20,6 @@ export const SearchInput = () => {
 				/>
 				{SearchImage}
 			</SearchInputBox>
-			<SearchButton>
-				<Icon type='search' />
-			</SearchButton>
 		</SearchWrapper>
 	);
 };
@@ -30,33 +27,44 @@ export const SearchInput = () => {
 const SearchWrapper = styled.form`
 	display: flex;
 	margin-bottom: 1rem;
+    width: 33.75rem;
+    height: 2.5rem;
+
+	@media screen and (max-width: 470px) {
+		height: 1.875rem;
+		width: 14.813rem;
+	}
 `;
 
 const SearchInputBox = styled(InputBox)`
-	height: 4.5rem;
+    height: 100%;
 	padding-left: 1.5rem;
-	padding-right: 1.5rem;
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
+    padding-right: 1.5rem;
+    padding-top: 0;
+    padding-bottom: 0;
 
 	@media (max-width: 540px) {
-		height: 3rem;
+		/* height: 3rem; */
 		padding-left: 0.7rem;
 		padding-right: 0.7rem;
 	}
 `;
 
-const IconImage = styled.img``;
+const IconImage = styled.img`
+
+`;
 
 const SearchImageButton = styled.button`
-	background: none;
+    background: none;
+    border-left: var(--border-blue);
+    border-left: 1px solid var(--blue);
+    padding-left: 1.5rem;
+    height: 100%;
 `;
 
 const SearchButton = styled.button`
-	width: 4.625rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 0 var(--radius) var(--radius) 0;
-	background: var(--pishure-red);
 `;

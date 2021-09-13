@@ -3,46 +3,52 @@ import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
 
 import Header from "../../components/Header/Header";
-import Logo from "../../components/Logo";
 import { Wrapper } from "../../components/Container/Wrapper";
 import BottomNav from "../../components/ButtonGroup";
 import SelectImage from "./SelectImage";
 import UploadImageForm from "./UploadImageForm";
 import { HeaderText } from "../../components/Header";
+import LeftSideNav from "../../components/Header/LeftSideNav";
+import Logo from "../../components/Logo";
+import { useFilehandler } from "../../hooks/useFilehandler";
+
 
 const Upload = () => {
-	const [file, setFile] = useState(null);
-	const [imageSizeError, setImageSizeError] = useState("");
+	// const [file, setFile] = useState(null);
+	// const [imageSizeError, setImageSizeError] = useState("");
 
-	const handleFile = e => {
-		const image = e.target.files[0];
-		let idealSize = 4;
-		if (image.size > idealSize * 1024 * 1024) {
-			setImageSizeError("Image should not be greater than 4mb");
-			setTimeout(() => setImageSizeError(""), 2000);
-			return;
-		}
-		setFile(image);
-	};
+	// const handleFile = e => {
+	// 	const image = e.target.files[0];
+	// 	let idealSize = 4;
+	// 	if (image.size > idealSize * 1024 * 1024) {
+	// 		setImageSizeError("Image should not be greater than 4mb");
+	// 		setTimeout(() => setImageSizeError(""), 2000);
+	// 		return;
+	// 	}
+	// 	setFile(image);
+	// };
 
-	const handleDrop = e => {
-		e.preventDefault();
-		const image =
-			e.dataTransfer.items[0].getAsFile() || e.dataTransfer.files[0];
-		let idealSize = 4;
-		if (image.size > idealSize * 1024 * 1024) {
-			setImageSizeError("Image should not be greater than 4mb");
-			setTimeout(() => setImageSizeError(""), 2000);
-			return;
-		}
-		setFile(image);
-	};
+
+	const {imageSizeError, file, handleDrop, handleFile, setFile} = useFilehandler()
+
+	// const handleDrop = e => {
+	// 	e.preventDefault();
+	// 	const image =
+	// 		e.dataTransfer.items[0].getAsFile() || e.dataTransfer.files[0];
+	// 	let idealSize = 4;
+	// 	if (image.size > idealSize * 1024 * 1024) {
+	// 		setImageSizeError("Image should not be greater than 4mb");
+	// 		setTimeout(() => setImageSizeError(""), 2000);
+	// 		return;
+	// 	}
+	// 	setFile(image);
+	// };
 
 	return (
 		<>
 			<Wrapper>
 				<Header>
-					<Logo />
+					<LeftSideNav />
 					<Title>Submit Photos</Title>
 					<StyledLink>Need help?</StyledLink>
 				</Header>
@@ -51,7 +57,7 @@ const Upload = () => {
 			{imageSizeError && <ErrorBanner>{imageSizeError}</ErrorBanner>}
 
 			{file ? (
-				<UploadImageForm setFile={setFile} imgFile={file} />
+				<UploadImageForm imgFile={file} setFile={setFile}/>
 			) : (
 				<SelectImage handleFile={handleFile} handleDrop={handleDrop} />
 			)}

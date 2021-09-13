@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import { Redirect } from "react-router";
 import Header, { HeaderText, HeaderInner } from "../../components/Header";
@@ -32,8 +32,20 @@ import {
 } from "./AuthStyles";
 import { useFormValidation } from "../../hooks/useFormValidation";
 import { useAuth } from "../../context/AuthContext";
+import {scroll} from '../../hooks/Scroll'
+import TagsSlider from "../../components/slider/Slider";
+import LeftSideNav from "../../components/Header/LeftSideNav";
+
+
+
 
 const Signin = () => {
+	
+	useEffect(() => {
+		scroll()
+	}, [])
+
+
 	const { register, handleSubmit, errors } = useFormValidation();
 
 	const [error, setError] = React.useState("");
@@ -48,8 +60,9 @@ const Signin = () => {
 
 	return (
 		<Wrapper>
+
 			<Header>
-				<Logo />
+				<LeftSideNav />
 				<HeaderInner>
 					<HeaderText>New to Pishure?</HeaderText>
 					<Button
@@ -67,7 +80,7 @@ const Signin = () => {
 					<ImagePreview />
 					<ImagePreviewDetails />
 				</ImagePreviewWrap>
-
+				
 				<FormWrapper>
 					<Headline>Login to Pishure.</Headline>
 					<BodyText>

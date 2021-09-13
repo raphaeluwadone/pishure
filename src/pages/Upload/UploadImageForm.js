@@ -19,6 +19,10 @@ const UploadImageForm = ({ imgFile, setFile }) => {
 				<CancelButton onClick={() => setFile(null)}>
 					<CancelIcon src={Cancel} />
 				</CancelButton>
+				<UploadInfo>
+					<p>Uploading - 36%</p>
+					<Progress value='36' max='100'></Progress>
+				</UploadInfo>
 			</ImageWrapper>
 			<Form>
 				<Row>
@@ -39,9 +43,16 @@ const UploadImageForm = ({ imgFile, setFile }) => {
 
 const Container = styled.div`
 	display: flex;
-	width: 51.1875rem;
+	max-width: 51.1875rem;
 	margin: 8.125rem auto 18.375rem;
 	gap: 2.6rem;
+
+	@media screen and (max-width: 836px) {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
 `;
 
 const ImageWrapper = styled.div`
@@ -49,6 +60,45 @@ const ImageWrapper = styled.div`
 	width: 20.5rem;
 	height: 25rem;
 `;
+
+const UploadInfo = styled.div`
+	background-color: #fff;
+	height: 3.125rem;
+	opacity: .7;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	bottom: 0;
+	width: 100%;
+	position: absolute;
+	p {
+		color: black;
+		margin: .5rem;
+	}
+
+`
+
+const Progress = styled.progress`
+	width: 100%;
+
+	&[value] {
+		-webkit-appearance: none;
+		appearance: none;
+	}
+
+	&[value]::-webkit-progress-bar {
+		border-radius: var(--radius);
+		background-color: var(--pishure-light-red);
+		height: 0.5rem;
+	}
+
+	&[value]::-webkit-progress-value {
+		border-radius: var(--radius);
+		background-color: var(--pishure-red);
+		height: 0.5rem;
+	}
+
+`
 
 const Image = styled.img`
 	width: 100%;
@@ -76,6 +126,7 @@ const CancelButton = styled.button`
 	right: -15px;
 	top: -15px;
 	border-radius: 50%;
+	opacity: .6;
 	background: var(--white);
 `;
 

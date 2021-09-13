@@ -16,6 +16,7 @@ import { useFormValidation } from "../../hooks/useFormValidation";
 
 import { FormWrapper, Headline, BodyText, Form, FormRow } from "./AuthStyles";
 import { Link } from "react-router-dom";
+import LeftSideNav from "../../components/Header/LeftSideNav";
 
 const ForgotPassword = () => {
 	const { register, handleSubmit } = useFormValidation();
@@ -26,7 +27,7 @@ const ForgotPassword = () => {
 	return (
 		<Wrapper>
 			<Header>
-				<Logo />
+				<LeftSideNav />
 				<HeaderInner>
 					<HeaderText>New to Pishure?</HeaderText>
 					<Button

@@ -15,12 +15,13 @@ import Button from "../../components/Button";
 
 import Icon from "../../components/Icon/Icon";
 import { Link } from "react-router-dom";
+import LeftSideNav from "../../components/Header/LeftSideNav";
 
 const MailSent = () => {
 	return (
 		<Wrapper>
 			<Header>
-				<Logo />
+				<LeftSideNav />
 				<HeaderInner>
 					<HeaderText>New to Pishure?</HeaderText>
 					<Button

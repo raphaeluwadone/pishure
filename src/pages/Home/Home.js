@@ -1,20 +1,32 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components/macro";
-import { Wrapper, Flex } from "../components/Container/Wrapper";
-import ImagePreview, { ImagePreviewDetails } from "../components/ImagePreview";
-import { SearchInput } from "../components/SearchInput/SearchInput";
-import ImageGrid from "../components/ImageGrid/ImageGrid";
-import Header from "../components/Header/Header";
-import Logo from "../components/Logo/Logo";
-import { NavSideContent } from "../components/Header";
+import { Wrapper, Flex } from "../../components/Container/Wrapper";
+import ImagePreview, { ImagePreviewDetails } from "../../components/ImagePreview";
+import { SearchInput } from "../../components/SearchInput/SearchInput";
+import ImageGrid from "../../components/ImageGrid/ImageGrid";
+import Header from "../../components/Header/Header";
+import Logo from "../../components/Logo/Logo";
+import { NavSideContent } from "../../components/Header";
+import ShowSearch from "./VisibleSearch";
+import LeftSideNav from "../../components/Header/LeftSideNav";
+import { scroll } from "../../hooks/Scroll";
+import MainHeader from "../../components/Header/MainHeader";
+
+
+
+
+
 
 const Home = () => {
+
+	useEffect(() => {
+		scroll()
+	}, [])
+
+
 	return (
 		<Wrapper>
-			<Header>
-				<Logo />
-				<NavSideContent />
-			</Header>
+			<MainHeader />
 			<Container>
 				<Col>
 					<Heading>Best Collection of Nigerian Stock Photos.</Heading>
@@ -45,6 +57,17 @@ const Container = styled(Flex)`
 		justify-content: flex-start;
 	}
 `;
+
+const Search = styled.h2`
+	margin-left: 30px;
+	display: ${props => props.visible ? props.visible : 'block'};
+`
+
+const LeftWrap = styled.div`
+	display: flex;
+	align-items: center;
+
+`
 
 const Col = styled.div`
 	max-width: 33.75rem;

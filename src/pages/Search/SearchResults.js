@@ -9,6 +9,7 @@ import { NavSideContent } from "../../components/Header";
 import camera from "../../assets/icon-camera.svg";
 import TagGroup from "./TagGroup";
 import ImageGrid from "../../components/ImageGrid";
+import TagsSlider from "../../components/slider/Slider";
 
 const tabs = [
 	"Lifestyle",
@@ -73,7 +74,8 @@ const SearchResults = () => {
 					<BodyText>
 						100+ portrait photos, available to download for free.
 					</BodyText>
-					<TagGroup style={{ marginBottom: "2rem" }} items={tabs} />
+					{/* <TagGroup style={{ marginBottom: "2rem" }} items={tabs} /> */}
+					<TagsSlider />
 					<ImageGrid />
 				</MainContent>
 			</Container>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { StyledLink } from "../Link/Links";
@@ -9,8 +9,22 @@ import Button from "../Button";
 import notify from "../../assets/notify.svg";
 
 const NavSideContent = () => {
+
+	const [show, setShow] = useState(false)
+
 	const { user } = useAuth();
 	// let user = {};
+
+	const changeVisible = () => {
+		if (window.scrollY > 500) {
+			setShow(true)
+		} else {
+			setShow(false)
+		}
+	}
+
+	window.addEventListener('scroll', changeVisible)
+
 
 	const authInnerNavContent = (
 		<InnerWrapper>

@@ -9,9 +9,14 @@ import {
   SetPassword,
   MailSent,
 } from "./pages/Authentication";
-import Home from "./pages/Home";
+// import {Home} from "./pages/Home";
+import Home from "./pages/Home/Home"
 import Upload from "./pages/Upload";
 import SearchResults from "./pages/Search/SearchResults";
+import ImageSearch from "./pages/Search/ImageSearch";
+import Profile from "./pages/profile/Profile";
+import Settings from "./pages/Settings/Settings.js"
+
 
 function App() {
   return (
@@ -49,6 +54,17 @@ function App() {
         <PrivateRoute path='/upload'>
           <Upload />
         </PrivateRoute>
+
+        <Route path='/imagesearch'>
+          <ImageSearch />
+        </Route>
+        <Route path='/profile'>
+          <Profile />
+        </Route>
+
+        <Route path='/settings'>
+          <Settings />
+        </Route>
 
         <Route path='*'>
           <h2>(404) Page not found</h2>

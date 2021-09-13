@@ -5,6 +5,7 @@ import { Wrapper } from "../../components/Container/Wrapper";
 const SelectImage = ({ handleFile, handleDrop }) => {
 	const dragoverHandler = ev => {
 		ev.preventDefault();
+		
 	};
 
 	return (
@@ -114,10 +115,19 @@ const Small = styled.span`
 const Details = styled.div`
 	display: flex;
 	justify-content: space-between;
+
+	@media screen and (max-width: 468px) {
+		flex-direction: column;
+	}
 `;
 
 const Col = styled.div`
 	width: 300px;
+	margin: 1rem 0;
+
+	@media screen and (max-width: 468px) {
+		width: 100%;
+	}
 `;
 
 const DetailsText = styled.p`

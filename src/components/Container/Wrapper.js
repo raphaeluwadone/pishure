@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
 	max-width: ${props => props.width || "83rem"};
 	width: 100%;
 	margin: 0 auto;
-
 	@media (max-width: 1367px) {
 		padding: 0 2rem;
 	}
