@@ -7,23 +7,18 @@ import { useAuth } from "../../context/AuthContext";
 import Avatar from "../Avatar";
 import Button from "../Button";
 import notify from "../../assets/notify.svg";
+import { useHistory } from "react-router-dom";
 
 const NavSideContent = () => {
 
-	const [show, setShow] = useState(false)
-
 	const { user } = useAuth();
 	// let user = {};
+	const history = useHistory()
 
-	const changeVisible = () => {
-		if (window.scrollY > 500) {
-			setShow(true)
-		} else {
-			setShow(false)
-		}
+	const profileRoute = () => {
+		history.push('/profile')
+		console.log('Profile router');
 	}
-
-	window.addEventListener('scroll', changeVisible)
 
 
 	const authInnerNavContent = (
@@ -32,7 +27,7 @@ const NavSideContent = () => {
 				Submit a photo
 			</Button>
 			<NotifyIcon src={notify} />
-			<Avatar />
+				<Avatar />
 		</InnerWrapper>
 	);
 

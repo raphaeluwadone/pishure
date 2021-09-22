@@ -12,6 +12,7 @@ import {
 // import {Home} from "./pages/Home";
 import Home from "./pages/Home/Home"
 import Upload from "./pages/Upload";
+import Dashboard from './pages/demo'
 import SearchResults from "./pages/Search/SearchResults";
 import ImageSearch from "./pages/Search/ImageSearch";
 import Profile from "./pages/profile/Profile";
@@ -54,6 +55,10 @@ function App() {
         <PrivateRoute path='/upload'>
           <Upload />
         </PrivateRoute>
+        {/* <PrivateRoute path='/dashboard'>
+          <Dashboard/>
+        </PrivateRoute> */}
+        <PrivateRoute path="/dashboard" exact component={Dashboard}/>
 
         <Route path='/imagesearch'>
           <ImageSearch />

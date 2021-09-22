@@ -10,18 +10,14 @@ function getUser() {
 	return window.localStorage.getItem(localStorageKey).user;
 }
 
-function handleUserResponse(obj) {
-	// window.localStorage.setItem(localStorageKey, user.token);
-	// return obj;
-	console.log(obj);
-}
+
 
 function login(data) {
-	return client("login", { data }).then(handleUserResponse);
+	return client("signin", data )
 }
 
 function signup(data) {
-	return client("register", { data });
+	return client("signup",  data );
 }
 
 function logout() {

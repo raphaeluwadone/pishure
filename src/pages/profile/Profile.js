@@ -8,6 +8,7 @@ import {AiOutlineInstagram} from 'react-icons/ai'
 import {FiTwitter} from 'react-icons/fi'
 import Photos from './Photos'
 import Stats from './Stats'
+import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 
 
 
@@ -50,9 +51,11 @@ function Profile() {
                                 <p>_derin</p>
                             </Twitter>
                         </SocialContainer>
-                    <EditButton>
-                        Edit Profile
-                    </EditButton>
+                        <Link to="/settings">
+                            <EditButton>
+                                Edit Profile
+                            </EditButton>
+                        </Link>
                     </Info>
                 </UserInfo>
             </Container>

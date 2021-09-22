@@ -13,7 +13,7 @@ import ImagePreview, {
 import FormGroup from "../../components/FormGroup/FormGroup";
 import Logo from "../../components/Logo/Logo";
 import Button from "../../components/Button";
-import { useFormValidation } from "../../hooks/useFormValidation";
+import { useFormValidation } from "../../hooks/signUpFormValidation";
 import { FormWrapper, Headline, BodyText, Form, FormRow } from "./AuthStyles";
 import { Link } from "react-router-dom";
 

@@ -1,7 +1,9 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import { Redirect } from "react-router";
+import { useHistory } from "react-router-dom";
 import Header, { HeaderText, HeaderInner } from "../../components/Header";
+import { MetroSpinner } from 'react-spinners-kit'
 
 import ImagePreview, {
 	ImagePreviewDetails,
@@ -30,32 +32,39 @@ import {
 	Form,
 	FormRow,
 } from "./AuthStyles";
-import { useFormValidation } from "../../hooks/useFormValidation";
+import { LoginFormValidation } from "../../hooks/loginFormValidation";
 import { useAuth } from "../../context/AuthContext";
-import {scroll} from '../../hooks/Scroll'
-import TagsSlider from "../../components/slider/Slider";
+import * as auth from "./auth-provider";
 import LeftSideNav from "../../components/Header/LeftSideNav";
 
-
-
-
 const Signin = () => {
-	
-	useEffect(() => {
-		scroll()
-	}, [])
+	const { register, handleSubmit, errors } = LoginFormValidation();
+	const [loading, setLoading] = useState(false)
 
-
-	const { register, handleSubmit, errors } = useFormValidation();
-
-	const [error, setError] = React.useState("");
-
-	const { user } = useAuth();
+	const { user, setUser } = useAuth();
 
 	if (user) return <Redirect to='/' />;
 
-	const Login = d => {
-		alert(JSON.stringify(d));
+	const login = async (userData) => {
+		setLoading(true)
+		try {
+			const response = await auth.login(userData);
+		    console.log('kicked of')
+			if (response.type === "error") {
+				console.log('something went wrong')
+				setLoading(false)
+			} else if(response.type === "success") {
+				const accessToken =  await response.data.user.access_token;
+				window.localStorage.setItem('userUniqueKey', JSON.stringify(accessToken));
+				setLoading(false)
+				setUser(response.data.user)
+				console.log(response)
+			}
+
+		} catch (err) {
+			console.log(err);
+			setLoading(false)
+		}
 	};
 
 	return (
@@ -100,14 +109,13 @@ const Signin = () => {
 					<Or>
 						<OrInner>OR</OrInner>
 					</Or>
-					<Form onSubmit={handleSubmit(Login)}>
+					<Form onSubmit={handleSubmit(login)}>
 						<FormRow>
 							<FormGroup
-								type='email'
 								label='Email address'
-								name='email'
+								name='username'
 								register={register}
-								error={errors.email}
+								error={errors.username}
 								required
 							/>
 						</FormRow>
@@ -132,8 +140,9 @@ const Signin = () => {
 							fontSize='1rem'
 							height='3.5rem'
 							type='submit'
+							style={{display: 'flex', justifyContent: 'center'}}
 						>
-							Login
+							{loading ? <MetroSpinner loading={loading} style={{color: '#fff', fontSize: '20px'}}/> : 'Login'}
 						</Button>
 					</Form>
 				</FormWrapper>

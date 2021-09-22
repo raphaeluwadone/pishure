@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components/macro";
 import FormGroup from "../../components/FormGroup";
 import Cancel from "../../assets/cancel.svg";
-import { useFormValidation } from "../../hooks/useFormValidation";
+import { useFormValidation } from "../../hooks/signUpFormValidation";
 
 const UploadImageForm = ({ imgFile, setFile }) => {
 	const url = URL.createObjectURL(imgFile);

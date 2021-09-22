@@ -1,25 +1,18 @@
-import axios from "axios";
+const url = 'http://pishure-backend.herokuapp.com';
 
-let url = process.env.REACT_APP_API_URL;
-
-const client = (
-	endpoint,
-	{ data, token, headers: customHeaders, ...customConfig } = {}
-) => {
-	const config = {
-		url: `${url}/${endpoint}`,
-		method: "get",
-		data: data ? data : undefined,
-		headers: {
-			Authorization: token ? `Bearer ${token}` : undefined,
-			"Content-Type": data ? "application/json" : undefined,
-			...customHeaders,
-		},
-		responseType: "json",
-		...customConfig,
-	};
-
-	return axios(config);
+const client = async (endpoint, data, method = 'POST') => {
+	try {
+		const response = await fetch(`${url}/${endpoint}`, {
+			method: method,
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(data)
+		});
+		return response.json();
+	} catch (err) {
+		console.log(err, 'what eactly is the problem');
+	}
 };
 
 export { client };

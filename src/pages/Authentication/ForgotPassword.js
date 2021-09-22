@@ -12,14 +12,14 @@ import ImagePreview, {
 import FormGroup from "../../components/FormGroup";
 import Button from "../../components/Button";
 import Logo from "../../components/Logo";
-import { useFormValidation } from "../../hooks/useFormValidation";
+import { ForgotPasswordValidation } from "../../hooks/forgotPasswordVal";
 
 import { FormWrapper, Headline, BodyText, Form, FormRow } from "./AuthStyles";
 import { Link } from "react-router-dom";
 import LeftSideNav from "../../components/Header/LeftSideNav";
 
 const ForgotPassword = () => {
-	const { register, handleSubmit } = useFormValidation();
+	const { register, handleSubmit } = ForgotPasswordValidation();
 	const submitHandler = d => {
 		alert(JSON.stringify(d));
 	};
