@@ -7,19 +7,12 @@ import { useAuth } from "../../context/AuthContext";
 import Avatar from "../Avatar";
 import Button from "../Button";
 import notify from "../../assets/notify.svg";
-import { useHistory } from "react-router-dom";
 
 const NavSideContent = () => {
 
 	const { user } = useAuth();
 	// let user = {};
-	const history = useHistory()
-
-	const profileRoute = () => {
-		history.push('/profile')
-		console.log('Profile router');
-	}
-
+	const [userCredentials, setUserCredentials] = useState(JSON.parse(window.localStorage.getItem("credentials") || ''));
 
 	const authInnerNavContent = (
 		<InnerWrapper>
@@ -27,7 +20,7 @@ const NavSideContent = () => {
 				Submit a photo
 			</Button>
 			<NotifyIcon src={notify} />
-				<Avatar />
+			<Avatar />
 		</InnerWrapper>
 	);
 
@@ -35,7 +28,7 @@ const NavSideContent = () => {
 		<NavRight>
 			<More src={more} />
 			<Text>Explore</Text>
-			{user ? (
+			{userCredentials?.user ? (
 				authInnerNavContent
 			) : (
 				<UnAuthenticatedInner>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Wrapper } from '../../components/Container/Wrapper'
 import Header, { NavSideContent } from '../../components/Header'
 import LeftSideNav from '../../components/Header/LeftSideNav'
@@ -9,6 +9,7 @@ import {FiTwitter} from 'react-icons/fi'
 import Photos from './Photos'
 import Stats from './Stats'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import { BiWindows } from 'react-icons/bi'
 
 
 
@@ -16,7 +17,17 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 function Profile() {
     const items = Array(12).fill({});
     const [content, setContent] = useState('photo')
+    const [user, setUser] = useState('')
+    const [loading, setLoading] = useState(false)
 
+    useEffect(() => {
+        const userDetails = JSON.parse(window.localStorage.getItem('credentials'))
+        setUser(userDetails.user)
+        console.log(user);
+    }, [])
+    if (!user) {
+        return <h2>Loading ...</h2>
+    }
     return (
         <Wrapper>
             <Header>
@@ -30,7 +41,7 @@ function Profile() {
                     </Avatar>
                     <Info>
                         <Fullname>
-                        Aderinsola Oluwafemi
+                        {user.firstname}  {user.lastname}
                         </Fullname>
                         <Description>
                         A creative sharing the Nigerian experience via my lenses.

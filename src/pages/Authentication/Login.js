@@ -42,6 +42,7 @@ const Signin = () => {
 	const [loading, setLoading] = useState(false)
 
 	const { user, setUser } = useAuth();
+	const history = useHistory()
 
 	if (user) return <Redirect to='/' />;
 
@@ -56,9 +57,14 @@ const Signin = () => {
 			} else if(response.type === "success") {
 				const accessToken =  await response.data.user.access_token;
 				window.localStorage.setItem('userUniqueKey', JSON.stringify(accessToken));
+				window.localStorage.setItem('credentials', JSON.stringify(response.data));
 				setLoading(false)
 				setUser(response.data.user)
 				console.log(response)
+				// if (response.data.user.avatar == null) {
+				// 	history.push('/profile')
+				// }
+				history.push('/profile')
 			}
 
 		} catch (err) {
