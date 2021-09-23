@@ -19,11 +19,6 @@ import MainHeader from "../../components/Header/MainHeader";
 
 const Home = () => {
 
-	useEffect(() => {
-		scroll()
-	}, [])
-
-
 	return (
 		<Wrapper>
 			<MainHeader />
